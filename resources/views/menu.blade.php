@@ -43,7 +43,12 @@
             <a class="nav-item nav-link" href={{ URL::to('ockovanie') }}>Ockovanie</a>
         </div>
     </div>
+
 </nav>
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
 
 <img src="img/Header-Background.webp" class="img-fluid" alt="Responsive image" width="100%">
 
