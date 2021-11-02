@@ -39,24 +39,23 @@ Route::get('/ockovacie-miesta', function () {
 
 Auth::routes();
 
+
 Route::group(['middleware'=>['auth']], function () {
+
+    Route::get('/users', function () {
+        return view ('users');
+    });
     Route::get('/admin', function () {
         return view ('home');
     });
-    Route::get('/users', function () {
-        return view ('users.index');
-    });
-
 
 });
 
-Route::resource('users', UserController::class);
+Route::get('objednavky',function (){return view ('objednavky.index');});
+
 Route::resource('objednavky',ObjednavkaController::class);
+Route::resource('users', UserController::class);
 Route::resource('miesta', MiestaController::class);
 Route::resource('ockovanie',OckovanieController::class);
 Route::resource('kontrola',KontrolaController::class);
 
-
-Route::get('/objednavky', function () {
-    return view ('objednavky.index');
-})->middleware('auth');

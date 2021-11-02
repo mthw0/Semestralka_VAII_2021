@@ -32,10 +32,6 @@ body {
     min-height: 1500px;
 }
 
-.card {
-    margin-bottom: 50px;
-}
-
 nav .container {
     margin-left: unset;
     margin-right: unset;
@@ -154,4 +150,42 @@ nav {
 
 .navbar {
     position: fixed;
+}
+
+.card {
+    z-index: -1 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-xs-12 {
+    margin: 10px;
+}
+
+#obj {
+    max-width: 90%;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* see notes below */
+    grid-gap: 1em;
+}
+
+.dropdown-menu {
+    top: 60px;
+}
+
+#vymazat {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 40%;
+    margin-top: 10px;
+}
+
+.karta {
+    border: 1px solid #cdcdcd;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
