@@ -14,9 +14,6 @@
     @foreach ($objednavky as $objednavka)
         <div class="karta">
             @include('objednavky.show')
-            <a class="btn btn-danger" id="vymazat">Vymazať</a>
-            <a class="btn btn-primary" id="vymazat">Upravit</a>
-
         </div>
     @endforeach
     </div>

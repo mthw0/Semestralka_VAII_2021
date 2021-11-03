@@ -9,13 +9,20 @@ class Objednavka extends Model
 {
     use HasFactory;
     public $timestamps = false;
-
     protected $fillable = [
         'meno',
         'priezvisko',
         'telCislo',
         'rodneCislo',
         'poradoveCislo',
-        'miesto'
+        'miesto',
+        'slug'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+
 }

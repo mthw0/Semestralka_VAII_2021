@@ -5,6 +5,9 @@
     });
 
 </script>
+<script src="js/jquery.js" >
+
+</script>
 <script>
     document.title=document.title+" - "+"Očkovanie";
 </script>
@@ -16,6 +19,7 @@
 
 
     <h1>Kto a kedy sa bude môcť dať zaočkovať?</h1>
+    <hr>
     <p><a href={{route('objednavky.create')}} target="_blank" class="btn btn-primary">Požiadať
             o očkovanie</a>
     </p>

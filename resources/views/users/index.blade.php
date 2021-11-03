@@ -1,12 +1,15 @@
-@extends('layouts.app')
+@include('menu')
 <title>Existujuci pouzivatelia</title>
-@section('content')
-    <div class="container">
-        <h1>Existujuci pouzivatelia</h1>
-        @foreach($users as $user)
-            @include('users.show')
-        @endforeach
 
+<div class="container">
+        <h1>Existujuci pouzivatelia</h1>
+        <hr>
+    <div id="grid">
+    @foreach($users as $user)
+        <div class="karta">
+            @include('users.show')
+        </div>
+        @endforeach
     </div>
-@endsection
+</div>
 @include('footer')

@@ -24,8 +24,10 @@
     @foreach ($miesta as $miesto)
             <div class="karta">
                 @include('miesta.show')
+                @auth
                 <a class="btn btn-danger" id="vymazat">Vymazať</a>
                 <a class="btn btn-primary" id="vymazat">Upravit</a>
+                @endauth
             </div>
     @endforeach
     </div>

@@ -33,6 +33,7 @@
     </div>
     <div class="two-thirds main">
         <h1 class="warning">Čo je COVID-19?</h1>
+        <hr>
         <p>COVID-19 je infekčné ochorenie, vyvolané koronavírusom SARS-CoV-2. Prvýkrát bol identifikovaný u pacientov so
             závažným respiračným ochorením v decembri roku 2019 v čínskom meste Wu-chan. COVID-19 postihuje najmä
             dýchací systém, v ťažkých prípadoch vyvoláva ťažký zápal pľúc a môže viesť až k úmrtiu pacienta. Vírus sa

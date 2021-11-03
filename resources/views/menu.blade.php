@@ -9,8 +9,13 @@
     <title>Covid web</title>
 
     <!-- Styles -->
+
     <link href="css/app.css" rel="stylesheet">
+    <link href="../css/app.css" rel="stylesheet">
+    <link href="../../css/app.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -37,6 +42,8 @@
             <a class="nav-item nav-link active" href={{ URL::to('co-je-covid') }}>Čo je covid?</a>
             <a class="nav-item nav-link" href={{ URL::to('aktualne-opatrenia') }}>Aktuálne opatrenia</a>
             <a class="nav-item nav-link" href={{ URL::to('miesta') }}>Ockovacie miesta</a>
+            <a class="nav-item nav-link" href={{ URL::to('posts') }}>Novinky</a>
+
             @auth()
             <a class="nav-item nav-link" href={{ URL::to('objednavky') }}>Objednavky</a>
             @endauth
