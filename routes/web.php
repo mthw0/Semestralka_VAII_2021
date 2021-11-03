@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('posts.index');
+    return view('co_je_covid');
 });
 
 Route::get('/novinky', function () {
@@ -53,7 +53,7 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/admin', function () {
         return view ('home');
     });
-    Route::resource('objednavky',ObjednavkaController::class);
+
     Route::resource('users', UserController::class);
 });
 //Route::resource('objednavky',ObjednavkaController::class);
@@ -62,7 +62,8 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::resource('posts', 'App\Http\Controllers\PostController');
 Route::resource('comments', 'App\Http\Controllers\CommentController');
 
-Route::get('objednavky/create', [ObjednavkaController::class, 'create'])->name('objednavky');
+//Route::get('objednavky/create', [ObjednavkaController::class, 'create'])->name('objednavky');
+Route::resource('objednavky',ObjednavkaController::class);
 
 Route::resource('miesta', MiestaController::class);
 Route::resource('ockovanie',OckovanieController::class);

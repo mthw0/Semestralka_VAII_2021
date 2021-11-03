@@ -178,12 +178,14 @@ nav {
     border: 1px solid #cdcdcd;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.form-control {
-    width: unset;
+    margin-bottom: 50px;
 }
 
 .card {
+    position: unset;
+}
+
+.list-group-item
+{
     position: unset;
 }

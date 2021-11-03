@@ -1,27 +1,63 @@
 $( document ).ready(function() {
     console.log( "document loaded" );
     $("#headingOne").click(function () {
-        $("#collapseOne").css('display','block');
+        if( $("#collapseOne").css('display') === 'block') {
+            $("#collapseOne").css('display','none');
+        } else {
+            $("#collapseOne").css('display','block');
+
+        }
         $("#collapseTwo").css('display','none');
         $("#collapseThree").css('display','none');
     });
     $("#collapseOne").click(function () {
-        $("#collapseOne").css('display','none');
+        if( $("#collapseOne").css('display') === 'block') {
+            $("#collapseOne").css('display','none');
+        } else {
+            $("#collapseOne").css('display','block');
+
+        }
+        $("#collapseTwo").css('display','none');
+        $("#collapseThree").css('display','none');
     });
     $("#headingTwo").click(function () {
+        if( $("#collapseTwo").css('display') === 'block') {
+            $("#collapseTwo").css('display','none');
+        } else {
+            $("#collapseTwo").css('display','block');
+
+        }
         $("#collapseOne").css('display','none');
-        $("#collapseTwo").css('display','block');
         $("#collapseThree").css('display','none');
     });
     $("#collapseTwo").click(function () {
-        $("#collapseTwo").css('display','none');
+        if( $("#collapseTwo").css('display') === 'block') {
+            $("#collapseTwo").css('display','none');
+        } else {
+            $("#collapseTwo").css('display','block');
+
+        }
+        $("#collapseOne").css('display','none');
+        $("#collapseThree").css('display','none');
     });
     $("#headingThree").click(function () {
+        if( $("#collapseThree").css('display') === 'block') {
+            $("#collapseThree").css('display','none');
+        } else {
+            $("#collapseThree").css('display','block');
+
+        }
         $("#collapseOne").css('display','none');
         $("#collapseTwo").css('display','none');
-        $("#collapseThree").css('display','block');
     });
     $("#collapseThree").click(function () {
-        $("#collapseThree").css('display','none');
+        if( $("#collapseThree").css('display') === 'block') {
+            $("#collapseThree").css('display','none');
+        } else {
+            $("#collapseThree").css('display','block');
+
+        }
+        $("#collapseOne").css('display','none');
+        $("#collapseTwo").css('display','none');
     });
 });

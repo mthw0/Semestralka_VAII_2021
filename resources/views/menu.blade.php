@@ -10,12 +10,8 @@
 
     <!-- Styles -->
 
-    <link href="css/app.css" rel="stylesheet">
-    <link href="../css/app.css" rel="stylesheet">
-    <link href="../../css/app.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet">
+    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">

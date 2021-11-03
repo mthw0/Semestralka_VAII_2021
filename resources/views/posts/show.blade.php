@@ -20,7 +20,7 @@
 
     <script src="{{ URL::asset('js/koment.js') }}"></script>
 
-    <div class="">
+    {{--<div class="">
         <h4>Komentáre</h4>
         @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
         <hr/>
@@ -42,5 +42,5 @@
             </div>
         </form>
         @endauth
-    </div>
+    </div>--}}
 </div>

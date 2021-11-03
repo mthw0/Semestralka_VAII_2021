@@ -25,8 +25,10 @@
             <div class="karta">
                 @include('miesta.show')
                 @auth
-                <a class="btn btn-danger" id="vymazat">Vymazať</a>
-                <a class="btn btn-primary" id="vymazat">Upravit</a>
+                <div class="row">
+                    <a class="btn btn-danger" id="vymazat">Vymazať</a>
+                    <a class="btn btn-primary" id="vymazat">Upravit</a>
+                </div>
                 @endauth
             </div>
     @endforeach
