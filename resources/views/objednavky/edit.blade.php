@@ -1,9 +1,12 @@
+@section('title', 'Edit Post')
+@section('action', route('objednavky.create'))
 @include('menu')
+
 <title>Upravit objednavku</title>
 <div class="container">
     <h1 class="title">Upravit objednavku</h1>
 
-    <form method="post" action="{{ route('objednavky.update',$objednavka) }}">
+    <form method="post" action="{{ route('objednavky.update',[$objednavka->slug]) }}">
         @csrf
         @method('patch')
         @include('chyby')

@@ -7,7 +7,7 @@
     @auth
     <div class="tlacidla">
         <a href="{{ route('posts.create') }}" class="btn btn-success">
-            <strong>Nový príspevok</strong>
+            <strong>+</strong>
         </a>
     </div>
     @endauth

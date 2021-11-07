@@ -1,13 +1,13 @@
 @foreach($comments as $comment)
 
-    <div class="display-comment card oramovanie_male" @if($comment->parent_id != null) @endif>
+    <div class="display-comment card oramovanie_male koment" @if($comment->parent_id != null) @endif>
         <strong> {{ $comment->user->name ?? '[Deleted]' }} </strong>
         <p>{{ $comment->body }}</p>
         <form method="post" action="{{ route('comments.store') }}">
             @csrf
             @auth
                 <div class="form-group">
-                    <a onclick="showComment({{ $comment->id }})" class="btn btn-success"
+                    <a onclick="showComment({{ $comment->id }})" class="btn btn-success btn-reply"
                        id='koment_answer{{ $comment->id }}'> Odpovedať</a>
                 </div>
 

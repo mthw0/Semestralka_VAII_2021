@@ -25,6 +25,7 @@
 
     <script src="{{ URL::asset('js/top.js') }}"></script>
     <script src="{{ URL::asset('js/cookie-message.js')}}">
+    <script src="{{ URL::asset('js/koment.js') }}"></script>
     </script>
 </head>
 <body>

@@ -189,3 +189,26 @@ nav {
 {
     position: unset;
 }
+
+.btn-reply {
+    position: relative;
+    /*left: 940px;
+    bottom: 56px;
+    margin-bottom: -80px;*/
+    transform: scaleX(0.8) scaleY(0.8);
+
+}
+
+.koment {
+    padding: 10px;
+}
+
+[id*="koment_hide"] {
+    height: 37px;
+}
+.koment form {
+    margin-bottom: -30px;
+}
+[id*="koment_answer"] {
+    margin-bottom: 0px;
+}
