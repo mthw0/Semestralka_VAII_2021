@@ -1,4 +1,8 @@
 @include('menu')
+<script>
+    document.title=document.title+" - "+"Novinky";
+</script>
+
 <div class="container">
     @auth
     <div class="tlacidla">
