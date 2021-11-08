@@ -6,7 +6,7 @@
 <div class="container">
     @auth
     <div class="tlacidla">
-        <a href="{{ route('posts.create') }}" class="btn btn-success">
+        <a href="{{ route('posts.create') }}" class="btn btn-outline-success">
             <strong>+</strong>
         </a>
     </div>

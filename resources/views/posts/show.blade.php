@@ -9,8 +9,8 @@
         @auth
             <form method="post" action="{{ route('posts.destroy', [$post->slug]) }}">
                 @csrf @method('delete')
-                <a href="{{ route('posts.edit', [$post->slug])}}" class="btn btn-sm btn-primary">✎ Upraviť</a>
-                <button type="submit" class="btn btn-sm btn-danger">🗑 Vymazať</button>
+                <a href="{{ route('posts.edit', [$post->slug])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
+                <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
 
             </form>
         @endauth
@@ -36,7 +36,7 @@
                 <textarea class="form-control" name="body"></textarea>
                 <input type="hidden" name="post_id" value="{{ $post->id }}" />
             </div>
-            <div class="form-group">
+            <div class="form-group right">
                 <input type="submit" class="btn btn-success" value="Pridať komentár" />
             </div>
         </form>

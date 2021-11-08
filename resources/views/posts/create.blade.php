@@ -25,10 +25,9 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="fname" name="category" required onkeyup="showHint(this.value)">
             </div>
-            <p>Dostupné kategórie: <span id="txtHint"></span></p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group right">
             <button type="submit" class="btn btn-success">Publikovať</button>
         </div>
 

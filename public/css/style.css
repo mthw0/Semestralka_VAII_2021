@@ -201,6 +201,7 @@ nav {
 
 .koment {
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 [id*="koment_hide"] {
@@ -211,4 +212,21 @@ nav {
 }
 [id*="koment_answer"] {
     margin-bottom: 0px;
+}
+
+a:hover
+{
+    cursor: pointer;
+}
+
+.right
+{
+    text-align: right;
+}
+
+.avatar
+{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
 }
