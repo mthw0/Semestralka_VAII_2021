@@ -38,9 +38,10 @@ class KontrolaController extends Controller
     public function store(Request $request)
     {
         $cislo = $request->get('rodneCislo');
+        $exists = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->count();
         $premenna = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->get();
-
-        return view('kontrola.uspech',['cislo'=>$premenna]);
+        if ($exists>0) return view('kontrola.uspech',['cislo'=>$premenna]);
+        else return view('kontrola.neuspech');
     }
 
     /**

@@ -4,6 +4,7 @@
     document.title=document.title+" - "+"Aktuálne opatrenia";
 </script>
 
+
 <div class="container">
 
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">
@@ -14,6 +15,9 @@
 
     <h1>Aktuálne opatrenia</h1>
     <hr>
+
+
+
     <div>
     <h2>Prehľad najdôležitejších zmien od 8.2.2021</h2>
     <ul>
@@ -109,6 +113,11 @@
    </ul>
     </div>
     </div>
+
+    <section id="section">
+        <iframe id="map" src="https://datawrapper.dwcdn.net/EghGA/32/"></iframe>
+        <button type="button" id="fullScreen" class="btn btn-primary" onclick="document.getElementById('map').requestFullscreen();">Full screen</button>
+    </section>
 
 </div>
 @include('footer')

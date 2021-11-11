@@ -120,8 +120,12 @@ strong {
     background: white;
     border: 0px;
     width:100%;
-    height:450px;
+    height:650px;
     display:block
+}
+#map:fullscreen
+{
+    padding: 50px;
 }
 #fullScreen
 {
@@ -202,13 +206,11 @@ nav {
 .koment {
     padding: 10px;
     margin-bottom: 10px;
+    background-color: rgba(255, 207, 132, 0);
 }
 
 [id*="koment_hide"] {
     height: 37px;
-}
-.koment form {
-    margin-bottom: -30px;
 }
 [id*="koment_answer"] {
     margin-bottom: 0px;
@@ -229,4 +231,19 @@ a:hover
     width: 50px;
     height: 50px;
     margin-bottom: 5px;
+}
+
+.koment_text
+{
+    font-size: 1rem;
+    color: #1f1f1f;
+}
+
+div .karta {
+    background-color: rgba(255, 229, 132, 0.45);
+}
+
+#section {
+    height: 1000px;
+
 }

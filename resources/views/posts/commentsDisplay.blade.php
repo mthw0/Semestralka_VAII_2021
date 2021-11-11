@@ -5,7 +5,7 @@
             <img src="https://pic.onlinewebfonts.com/svg/img_550783.png" alt="Avatar" class="avatar">
             <strong> {{ $comment->user->name ?? '[Deleted]' }} </strong>
         </div>
-        <p>{{ $comment->body }}</p>
+        <p class="koment_text">{{ $comment->body }}</p>
         <form method="post" action="{{ route('comments.store') }}">
             @csrf
             @auth
