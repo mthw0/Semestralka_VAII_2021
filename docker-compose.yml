@@ -15,7 +15,7 @@ services:
         environment:
             WWWUSER: '${WWWUSER}'
             LARAVEL_SAIL: 1
-            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-on}'
+            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
             XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
         volumes:
             - '.:/var/www/html'
@@ -24,17 +24,18 @@ services:
         depends_on:
             - mariadb
     phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      links:
-        - mysql:mysql
-      ports:
-        - 8080:80
-      environment:
-        MYSQL_USERNAME: "${DB_USERNAME}"
-        MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
-        PMA_HOST: mysql
-      networks:
-        - sail
+        image: phpmyadmin:latest
+        links:
+            - "mariadb:db"
+        ports:
+            - 8080:80
+        environment:
+            MYSQL_USERNAME: "${DB_USERNAME}"
+            MYSQL_ROOT_PASSWORD: "${DB_PASSWORD}"
+        networks:
+            - sail
+        depends_on:
+            - mariadb
     mariadb:
         image: 'mariadb:10'
         ports:
