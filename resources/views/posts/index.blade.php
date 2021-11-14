@@ -4,6 +4,9 @@
 </script>
 
 <div class="container">
+    <h1>Novinky</h1>
+    <hr>
+
     @auth
     <div class="tlacidla">
         <a href="{{ route('posts.create') }}" class="btn btn-outline-success">
@@ -11,6 +14,7 @@
         </a>
     </div>
     @endauth
+
     @foreach ($posts  as $post)
         @include('posts.show')
     @endforeach

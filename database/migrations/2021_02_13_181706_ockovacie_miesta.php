@@ -13,7 +13,7 @@ class OckovacieMiesta extends Migration
      */
     public function up()
     {
-        Schema::create('ockovacie_miesta', function (Blueprint $table) {
+        Schema::create('ockovacie_miestos', function (Blueprint $table) {
             $table->id();
             $table->string('nazov')->unique();
             $table->string('adresa');

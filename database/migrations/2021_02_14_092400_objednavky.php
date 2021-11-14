@@ -13,10 +13,10 @@ class Objednavky extends Migration
      */
     public function up()
     {
-        Schema::create('objednavky', function (Blueprint $table) {
+        Schema::create('objednavkas', function (Blueprint $table) {
             $table->id();
             $table->string('miesto')->unique();
-            $table->foreign('miesto')->on('ockovacie_miesta')->references('nazov')->onDelete('cascade');
+            $table->foreign('miesto')->on('ockovacie_miestos')->references('nazov')->onDelete('cascade');
             $table->string('meno');
             $table->string('priezvisko');
             $table->string('telCislo');

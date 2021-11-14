@@ -115,7 +115,7 @@
     </div>
 
     <section id="section">
-        <iframe id="map" src="https://datawrapper.dwcdn.net/EghGA/32/"></iframe>
+        <iframe id="map" src="https://datawrapper.dwcdn.net/8MF8E/54/"></iframe>
         <button type="button" id="fullScreen" class="btn btn-primary" onclick="document.getElementById('map').requestFullscreen();">Full screen</button>
     </section>
 

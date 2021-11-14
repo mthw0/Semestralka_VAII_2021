@@ -34,7 +34,7 @@
                        placeholder="000000/0000" required/>
             </div>
         </div>
-        <div class="field form-group">
+        <div class="field form-group" style="display: none">
             <label class="label">Poradové císlo</label>
             <div class="control">
                 <input type="text" name="poradoveCislo" value="{{$cislo}}" class="input" placeholder="{{$cislo}}"
