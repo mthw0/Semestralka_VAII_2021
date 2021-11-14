@@ -207,6 +207,7 @@ nav {
     padding: 10px;
     margin-bottom: 10px;
     background-color: rgba(255, 207, 132, 0);
+    border-left: #008000 4px solid;
 }
 
 [id*="koment_hide"] {

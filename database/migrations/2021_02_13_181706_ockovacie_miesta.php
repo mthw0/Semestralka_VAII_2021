@@ -31,6 +31,6 @@ class OckovacieMiesta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ockovacie_miesta');
+        Schema::dropIfExists('ockovacie_miestos');
     }
 }

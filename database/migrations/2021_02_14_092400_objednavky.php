@@ -15,7 +15,7 @@ class Objednavky extends Migration
     {
         Schema::create('objednavkas', function (Blueprint $table) {
             $table->id();
-            $table->string('miesto')->unique();
+            $table->string('miesto');
             $table->foreign('miesto')->on('ockovacie_miestos')->references('nazov')->onDelete('cascade');
             $table->string('meno');
             $table->string('priezvisko');
@@ -34,6 +34,6 @@ class Objednavky extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objednavky');
+        Schema::dropIfExists('objednavkas');
     }
 }

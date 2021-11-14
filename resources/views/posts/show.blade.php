@@ -2,7 +2,7 @@
     <div class="">
         <h1 class="nadpis">{{ $post->title }}</h1>
         <hr>
-        <p><span class="created">Vytvorené: </span>{{ $post->created_at->diffForHumans() }}</p>
+        <p><span class="created">Vytvorené: </span>{{ $post->created_at==null?'Dávno':$post->created_at->diffForHumans() }}</p>
         <p><span class="created">#</span>{{ $post->category }}</p>
         <p>{!! nl2br(e($post->content)) !!}</p>
 
