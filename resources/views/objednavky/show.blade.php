@@ -11,8 +11,6 @@
     </ul>
 
 </div>
-{{--<a class="btn btn-danger" id="vymazat">Vymazať</a>
-<a class="btn btn-primary" id="vymazat">Upravit</a>--}}
 
 <form action="{{ route('objednavky.destroy', [$objednavka->slug]) }}" method="post">
     @csrf @method('delete')

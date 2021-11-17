@@ -18,7 +18,7 @@ class OckovacieMiesta extends Migration
             $table->string('nazov')->unique();
             $table->string('adresa');
             $table->string('popis');
-            $table->string('obrazok');
+            $table->string('obrazok')->default('null');
             $table->integer('dennaKapacita');
 
         });

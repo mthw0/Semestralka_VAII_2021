@@ -24,5 +24,23 @@ class ObjednavkaSeeder extends Seeder
             'miesto'=>'Bratislava',
             'slug'=>'1'
         ]);
+        DB::table('objednavkas')->insert([
+            'meno' => 'Juraj',
+            'priezvisko'=>'Novák',
+            'telCislo'=>'0904340120',
+            'rodneCislo'=>'880502/8125',
+            'poradoveCislo'=>'2',
+            'miesto'=>'Kosice',
+            'slug'=>'2'
+        ]);
+        DB::table('objednavkas')->insert([
+            'meno' => 'Štefan',
+            'priezvisko'=>'Múdry',
+            'telCislo'=>'0904890230',
+            'rodneCislo'=>'781220/5784',
+            'poradoveCislo'=>'3',
+            'miesto'=>'Bratislava',
+            'slug'=>'3'
+        ]);
     }
 }

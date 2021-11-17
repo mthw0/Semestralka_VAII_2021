@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Objednavka;
 use App\Models\OckovacieMiesto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -11,13 +10,12 @@ class MiestaController extends Controller
 {
     public function index()
     {
-        return view('miesta.index', ['miesta' => OckovacieMiesto::all()]);
+        return view('miesta.index', ['miesta'=>OckovacieMiesto::all()]);
     }
 
     public function create()
     {
         return view('miesta.create');
-
     }
 
     public function store(Request $request)
@@ -29,9 +27,9 @@ class MiestaController extends Controller
             'dennaKapacita' => 'required|int'
         ]);
 
-        $validated['slug'] = Str::slug($validated['nazov'], '-');
+        $validated['slug'] = Str::slug($validated['nazov']);
 
-        $miesto = OckovacieMiesto::create($validated);
+        OckovacieMiesto::create($validated);
 
         return view('miesta.index');
 
@@ -39,29 +37,39 @@ class MiestaController extends Controller
 
     public function show(OckovacieMiesto $miesto)
     {
-        return view('miesta.show');
+        return view('miesta.show',compact('miesto'));
 
     }
 
     public function edit(OckovacieMiesto $miesto)
     {
-        return view('miesta.edit');
+        return view('miesta.edit',compact('miesto'));
     }
 
 
     public function update(Request $request, OckovacieMiesto $miesto)
     {
-    }
+        $validated = $request->validate([
+            'nazov' => 'required|string|unique:ockovacie_miestos|max:255',
+            'adresa' => 'required|string|max:255',
+            'popis' => 'required|string|max:255',
+            'dennaKapacita' => 'required|int'
+        ]);
 
-    public function destroy(OckovacieMiesto $miesto)
-    {
-        $miesto->delete();
+        $validated['slug'] = Str::slug($validated['nazov']);
+
+        $miesto->update($validated);
+
         return redirect(route('miesta.index'));
     }
 
-    public function getRouteKeyName()
+    public function destroy($id)
     {
-        return 'slug';
+        if (OckovacieMiesto::destroy($id)) {
+            return redirect('miesta');
+        }
     }
+
+
 
 }

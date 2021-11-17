@@ -1,3 +1,5 @@
+@include('menu')
+
 <title>Vytvorit nove miesto</title>
 <div class="container">
 
@@ -6,40 +8,25 @@
 
     <form method="post" action="{{ route('miesta.store') }}">
         @csrf
-        <div class="field">
+        <div>
             <label class="label">Nazov</label>
-            <div class="control">
-                <input type="text" name="nazov" value="{{ old('nazov') }}" class="input" placeholder="Nazov" required />
-            </div>
-        </div>
-
-        <div class="field">
+            <input type="text" name="nazov" value="{{ old('nazov') }}" class="form-control" placeholder="Nazov" required />
             <label class="label">Adresa</label>
-            <div class="control">
-                <input type="text" name="adresa" value="{{ old('adresa') }}" class="input" placeholder="Adresa" required />
-            </div>
-        </div>
-        <div class="field">
+            <input type="text" name="adresa" value="{{ old('adresa') }}" class="form-control" placeholder="Adresa" required />
             <label class="label">Popis</label>
-            <div class="control">
-                <input type="text" name="popis" value="{{ old('popis') }}" class="input" placeholder="Popis" required />
-            </div>
-        </div>
-        <div class="field">
+            <input type="text" name="popis" value="{{ old('popis') }}" class="form-control" placeholder="Popis" required />
+
             <label class="label">Denna kapacita</label>
-            <div class="control">
-                <input type="text" name="dennaKapacita" value="{{ old('dennaKapacita') }}" class="input" placeholder="Denna kapacita" required />
-            </div>
+            <input type="text" name="dennaKapacita" value="{{ old('dennaKapacita') }}" class="form-control" placeholder="Denna kapacita" required />
+
+            <button type="submit" class="btn btn-outline-primary">Odoslat</button>
+
         </div>
 
 
-
-        <div class="field">
-            <div class="control">
-                <button type="submit" class="button is-link is-outlined">Odoslat</button>
-            </div>
-        </div>
 
     </form>
 
 </div>
+
+@include('footer')

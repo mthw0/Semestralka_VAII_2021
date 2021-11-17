@@ -9,37 +9,32 @@
         @csrf
         <div class="field form-group">
             <label class="label">Meno</label>
-            <div class="control">
-                <input type="text" name="meno" value="{{ old('meno') }}" class="input" placeholder="Meno" required/>
-            </div>
+                <input type="text" name="meno" value="{{ old('meno') }}" class="form-control" placeholder="Meno" required/>
+
         </div>
         <div class="field form-group">
             <label class="label">Priezvisko</label>
-            <div class="control">
-                <input type="text" name="priezvisko" value="{{ old('priezvisko') }}" class="input"
+                <input type="text" name="priezvisko" value="{{ old('priezvisko') }}" class="form-control"
                        placeholder="Priezvisko" required/>
-            </div>
+
         </div>
         <div class="field form-group">
             <label class="label">Tel. cislo</label>
-            <div class="control">
-                <input type="text" name="telCislo" value="{{ old('telCislo') }}" class="input" placeholder="0000000000"
+                <input type="text" name="telCislo" value="{{ old('telCislo') }}" class="form-control" placeholder="0000000000"
                        required/>
-            </div>
+
         </div>
         <div class="field form-group">
             <label class="label">Rodne cislo</label>
-            <div class="control">
-                <input type="text" name="rodneCislo" value="{{ old('rodneCislo') }}" class="input"
+                <input type="text" name="rodneCislo" value="{{ old('rodneCislo') }}" class="form-control"
                        placeholder="000000/0000" required/>
-            </div>
+
         </div>
         <div class="field form-group" style="display: none">
             <label class="label">Poradové císlo</label>
-            <div class="control">
-                <input type="text" name="poradoveCislo" value="{{$cislo}}" class="input" placeholder="{{$cislo}}"
+                <input type="text" name="poradoveCislo" value="{{$cislo}}" class="" placeholder="{{$cislo}}"
                       required readonly="readonly"/>
-            </div>
+
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect2">Miesto</label>

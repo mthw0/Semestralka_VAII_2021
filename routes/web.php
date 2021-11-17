@@ -1,12 +1,12 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\KontrolaController;
 use App\Http\Controllers\MiestaController;
 use App\Http\Controllers\ObjednavkaController;
 use App\Http\Controllers\OckovanieController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -44,7 +44,6 @@ Route::get('/ockovacie-miesta', function () {
 
 Auth::routes();
 
-
 Route::group(['middleware'=>['auth']], function () {
 
     Route::get('/users', function () {
@@ -56,19 +55,14 @@ Route::group(['middleware'=>['auth']], function () {
 
     Route::resource('users', UserController::class);
 });
-//Route::resource('objednavky',ObjednavkaController::class);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
-Route::resource('posts', 'App\Http\Controllers\PostController');
-Route::resource('comments', 'App\Http\Controllers\CommentController');
 
-//Route::get('objednavky/create', [ObjednavkaController::class, 'create'])->name('objednavky');
+Route::resource('posts', PostController::class);
+Route::resource('comments', CommentController::class);
 Route::resource('objednavky',ObjednavkaController::class);
-
 Route::resource('miesta', MiestaController::class);
 Route::resource('ockovanie',OckovanieController::class);
 Route::resource('kontrola',KontrolaController::class);
 
 Route::redirect('/home','posts');
-//Route::delete('objednavky/{id}','ObjednavkaController@destroy')->name('objednavky.destroy');
-//Route::get('/objednavky/{objednavka}/edit', [ObjednavkaController::class, 'edit']);

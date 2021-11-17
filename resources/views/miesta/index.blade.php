@@ -2,7 +2,7 @@
 
 <link href="/css/style.css" rel="stylesheet">
 <script>
-    document.title=document.title+" - "+"Očkovacie miesta";
+    document.title = document.title + " - " + "Očkovacie miesta";
 </script>
 
 <div class="container" id="obj">
@@ -15,23 +15,17 @@
     <hr>
 
     @auth
-    <button href="{{ route('miesta.create') }}" class="btn btn-success">
-        Nove miesto
-    </button>
+        <a href="{{ route('miesta.create') }}" class="btn btn-success">
+            Nove miesto
+        </a>
     @endauth
 
     <div id="grid">
-    @foreach ($miesta as $miesto)
+        @foreach ($miesta as $miesto)
             <div class="karta">
                 @include('miesta.show')
-                @auth
-                <div class="row">
-                    <a class="btn btn-danger" id="vymazat">Vymazať</a>
-                    <a class="btn btn-primary" id="vymazat">Upravit</a>
-                </div>
-                @endauth
             </div>
-    @endforeach
+        @endforeach
     </div>
 </div>
 
