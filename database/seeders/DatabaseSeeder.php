@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         MiestoSeeder::class,
         UserSeeder::class,
         ObjednavkaSeeder::class,
-        PostSeeder::class
-
+        PostSeeder::class,
+        KomentSeeder::class
         ]);
     }
 }
