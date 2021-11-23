@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('co_je_covid');
+    return view('home');
 });
 
 Route::get('/novinky', function () {
@@ -52,8 +52,19 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/admin', function () {
         return view ('home');
     });
+    Route::get('/objednavky', function () {
+        return view ('objednavky');
+    });
 
     Route::resource('users', UserController::class);
+});
+
+Route::get('/register',function (){
+    return abort(403);
+});
+
+Route::get('/objednavky/create', function () {
+    return view ('objednavky.create');
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
