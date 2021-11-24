@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('posts');
 });
 
 Route::get('/novinky', function () {
@@ -44,8 +44,8 @@ Route::get('/ockovacie-miesta', function () {
 
 Auth::routes();
 
-Route::group(['middleware'=>['auth']], function () {
 
+Route::prefix('/admin')->middleware('auth')->group(function (){
     Route::get('/users', function () {
         return view ('users');
     });
@@ -53,27 +53,51 @@ Route::group(['middleware'=>['auth']], function () {
         return view ('home');
     });
     Route::get('/objednavky', function () {
-        return view ('objednavky');
+        return view ('objednavky.index');
     });
-
     Route::resource('users', UserController::class);
+    Route::resource('posts', PostController::class);
+
+
+    Route::post('/miesta',[MiestaController::class,'store'])->name('miesta.create');
+ //------------------------------------------------------------
+    Route::get('/miesta',[MiestaController::class,'index'])->name('miesta.index');
+    Route::get('/noveMiesto',[MiestaController::class,'create'])->name('miesta.create');
+    Route::post('/noveMiesto',[MiestaController::class,'store'])->name('miesta.store');
+    //
+    Route::get('/miesta/{slug}/edit',[MiestaController::class,'edit'])->name('miesta.edit');
+    Route::patch('/miesta/{slug}',[MiestaController::class,'update'])->name('miesta.update');
+    Route::delete('/miesta/{slug}',[MiestaController::class,'destroy'])->name('miesta.destroy');
+//----------------------------------------------------
+    Route::get('/objednavky',[ObjednavkaController::class,'index'])->name('objednavky.index');
+    Route::get('/novaObjednavka',[ObjednavkaController::class,'create'])->name('objednavky.create');
+    Route::post('/novaObjednavka',[ObjednavkaController::class,'store'])->name('objednavky.store');
+    //
+    Route::get('/objednavky/{slug}/edit',[ObjednavkaController::class,'edit'])->name('objednavky.edit');
+    Route::patch('/objednavky/{slug}',[ObjednavkaController::class,'update'])->name('objednavky.update');
+    Route::delete('/objednavky/{slug}',[ObjednavkaController::class,'destroy'])->name('objednavky.destroy');
+//----------------------------------------------------
+    Route::get('/posts',[PostController::class,'index'])->name('posts.index');
+    Route::get('/novyClanok',[PostController::class,'create'])->name('posts.create');
+    Route::post('/novyClanok',[PostController::class,'store'])->name('posts.store');
+    //Route::get('/posts/{slug}',[PostController::class,'show'])->name('posts.show');
+    Route::get('/posts/{slug}/edit',[PostController::class,'edit'])->name('posts.edit');
+    Route::patch('/posts/{slug}',[PostController::class,'update'])->name('posts.update');
+    Route::delete('/posts/{slug}',[PostController::class,'destroy'])->name('posts.destroy');
 });
 
 Route::get('/register',function (){
     return abort(403);
 });
 
-Route::get('/objednavky/create', function () {
-    return view ('objednavky.create');
-});
-
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
 
-Route::resource('posts', PostController::class);
 Route::resource('comments', CommentController::class);
-Route::resource('objednavky',ObjednavkaController::class);
-Route::resource('miesta', MiestaController::class);
-Route::resource('ockovanie',OckovanieController::class);
+Route::get('/registracia',[ObjednavkaController::class,'create'])->name('objednavky.create');
+Route::post('/objednavky/create',[ObjednavkaController::class,'store'])->name('objednavky.store');
+Route::get('/miesta',[MiestaController::class,'index'])->name('miesta.index');
+
+Route::get('/ockovanie',[OckovanieController::class,'index'])->name('ockovanie.index');
 Route::resource('kontrola',KontrolaController::class);
 
 Route::redirect('/home','posts');

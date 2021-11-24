@@ -4,10 +4,10 @@
 <title>Vytvorit nove miesto</title>
 <div class="container">
 
-    <h1 class="title">Vytvorit nove miesto</h1>
+    <h1 class="title">Upravit miesto</h1>
 
 
-    <form method="post" action="{{ route('miesta.update',$miesto->id) }}">
+    <form method="post" action="{{ route('miesta.update',[$miesto->id]) }}">
         @csrf
         @method('patch')
         @include('chyby')
@@ -23,13 +23,8 @@
             <input type="text" name="dennaKapacita" value="{{ $miesto->dennaKapacita }}" class="form-control" placeholder="Denna kapacita" required />
 
             <button type="submit" class="btn btn-outline-primary">Odoslat</button>
-
         </div>
-
-
-
     </form>
-
 </div>
 
 @include('footer')

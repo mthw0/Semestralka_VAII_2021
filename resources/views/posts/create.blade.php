@@ -1,8 +1,7 @@
-@section('title', 'New Post')
-@extends('layouts.app')
+@include('menu')
 
 <div class="container">
-    <script src="{{ URL::asset('js/showHint.js') }}"></script>
+
     <h1 class="title">Vytvoriť nový príspevok</h1>
 
     <form class="pridat" method="post" action="{{ route('posts.store') }}">
@@ -17,7 +16,7 @@
 
         <div class="form-group">
             <label class="label">Obsah</label>
-            <textarea name="content" class="form-control" placeholder="Obsah" minlength="5" maxlength="2000" required rows="10">{{ old('content') }}</textarea>
+            <textarea name="content" class="form-control" placeholder="Obsah" minlength="5" maxlength="11900" required rows="10">{{ old('content') }}</textarea>
         </div>
 
         <div class="form-group row">

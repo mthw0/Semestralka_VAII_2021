@@ -11,7 +11,6 @@
     <!-- Styles -->
 
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -26,7 +25,7 @@
     <script src="{{ URL::asset('js/top.js') }}"></script>
     <script src="{{ URL::asset('js/cookie-message.js')}}">
     <script src="{{ URL::asset('js/koment.js') }}"></script>
-    </script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,7 +41,7 @@
             <a class="nav-item nav-link" href={{ URL::to('posts') }}>Novinky</a>
 
             @auth()
-            <a class="nav-item nav-link" href={{ URL::to('objednavky') }}>Objednavky</a>
+            <a class="nav-item nav-link" href={{ URL::to('admin/objednavky') }}>Objednavky</a>
             @endauth
             <a class="nav-item nav-link" href={{ URL::to('ockovanie') }}>Ockovanie</a>
         </div>

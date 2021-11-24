@@ -9,7 +9,8 @@
         @auth
             <form method="post" action="{{ route('posts.destroy', [$post->slug]) }}">
                 @csrf @method('delete')
-                <a href="{{ route('posts.edit', [$post->slug])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
+                {{--dd($post->slug)--}}
+                <a href="{{ route('posts.edit', [$post])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
                 <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
 
             </form>

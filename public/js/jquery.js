@@ -5,7 +5,6 @@ $( document ).ready(function() {
             $("#collapseOne").css('display','none');
         } else {
             $("#collapseOne").css('display','block');
-
         }
         $("#collapseTwo").css('display','none');
         $("#collapseThree").css('display','none');
@@ -15,7 +14,6 @@ $( document ).ready(function() {
             $("#collapseOne").css('display','none');
         } else {
             $("#collapseOne").css('display','block');
-
         }
         $("#collapseTwo").css('display','none');
         $("#collapseThree").css('display','none');
@@ -25,7 +23,6 @@ $( document ).ready(function() {
             $("#collapseTwo").css('display','none');
         } else {
             $("#collapseTwo").css('display','block');
-
         }
         $("#collapseOne").css('display','none');
         $("#collapseThree").css('display','none');
@@ -35,7 +32,6 @@ $( document ).ready(function() {
             $("#collapseTwo").css('display','none');
         } else {
             $("#collapseTwo").css('display','block');
-
         }
         $("#collapseOne").css('display','none');
         $("#collapseThree").css('display','none');
@@ -45,7 +41,6 @@ $( document ).ready(function() {
             $("#collapseThree").css('display','none');
         } else {
             $("#collapseThree").css('display','block');
-
         }
         $("#collapseOne").css('display','none');
         $("#collapseTwo").css('display','none');
@@ -55,7 +50,6 @@ $( document ).ready(function() {
             $("#collapseThree").css('display','none');
         } else {
             $("#collapseThree").css('display','block');
-
         }
         $("#collapseOne").css('display','none');
         $("#collapseTwo").css('display','none');

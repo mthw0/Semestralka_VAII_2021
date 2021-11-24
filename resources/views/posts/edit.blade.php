@@ -3,8 +3,9 @@
 @include('menu')
 
 <div class="container">
-    <h1 class="title">Upraviť: {{ $post->title }}</h1>
 
+
+    <h1 class="title">Upraviť: {{ $post->title }}</h1>
     <form method="post" class="pridat" action="{{ route('posts.update', [$post->slug]) }}">
 
         @csrf

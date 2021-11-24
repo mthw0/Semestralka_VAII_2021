@@ -42,11 +42,16 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        //$post=Post::query()->get('title')->where('slug','=',$post);
+        //$post= Post::find($post);
+        //dd($post);
         return view('posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post)
     {
+        //$post=Post::find($post);
+
         $validated = $request->validate([
             'title'    => 'required|string|min:5|max:100',
             'content'  => 'required|string|min:5',

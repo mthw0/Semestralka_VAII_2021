@@ -7,7 +7,7 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@keyframes "animate" {
+@keyframes animate {
     0% {
         color: $red;
     }
@@ -196,7 +196,7 @@ a {
 }
 .koment_text {
     font-size: 1rem;
-    color: $koment-border;
+    color: $koment-text;
 }
 #section {
     height: 1000px;

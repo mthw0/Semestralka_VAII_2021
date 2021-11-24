@@ -46,25 +46,28 @@ class ObjednavkaController extends Controller
     }
 
 
-    public function edit(Objednavka $objednavka)
+    public function edit($objednavka)
     {
-        return view('objednavky.edit',compact('objednavka'));
+        $objednavka=Objednavka::find($objednavka);
+        $nazvy=OckovacieMiesto::query()->get('nazov');
+        return view('objednavky.edit',compact('objednavka','nazvy'));
     }
 
 
-    public function update(Request $request,Objednavka $objednavka)
+    public function update(Request $request, $objednavka)
     {
+        $objednavka=Objednavka::find($objednavka);
         $validated = $request->validate([
             'miesto' => 'required|string|max:255',
             'meno' => 'required|string|max:255',
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int|unique:objednavkas'
+            'poradoveCislo' => 'required|int|unique:objednavkas,poradoveCislo'
 
         ]);
 
-        $validated['slug'] = Str::slug($validated['rodneCislo'], '-');
+        $validated['slug'] = Str::slug($validated['poradoveCislo'], '-');
 
         $objednavka->update($validated);
 

@@ -31,26 +31,26 @@ class MiestaController extends Controller
 
         OckovacieMiesto::create($validated);
 
-        return view('miesta.index');
-
+        return redirect('miesta');
     }
 
     public function show(OckovacieMiesto $miesto)
     {
         return view('miesta.show',compact('miesto'));
-
     }
 
-    public function edit(OckovacieMiesto $miesto)
+    public function edit($miesto)
     {
+        $miesto=OckovacieMiesto::find($miesto);
         return view('miesta.edit',compact('miesto'));
     }
 
 
-    public function update(Request $request, OckovacieMiesto $miesto)
+    public function update(Request $request, $miesto)
     {
+        $miesto=OckovacieMiesto::find($miesto);
         $validated = $request->validate([
-            'nazov' => 'required|string|unique:ockovacie_miestos|max:255',
+            'nazov' => 'required|string|max:255',
             'adresa' => 'required|string|max:255',
             'popis' => 'required|string|max:255',
             'dennaKapacita' => 'required|int'
