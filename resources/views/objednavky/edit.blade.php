@@ -12,25 +12,21 @@
         @include('chyby')
 
         <label class="label">Meno</label>
-
-        <input type="text" name="meno" pattern="[A-Ž]{1}[a-ž]" value="{{ $objednavka->meno }}" class="form-control" required/>
+        <input type="text" name="meno" value="{{ $objednavka->meno }}" class="form-control" required/>
 
         <label class="label">Priezvisko</label>
-
-        <input type="text" name="priezvisko" pattern="[A-Ž]{1}[a-ž]" value="{{ $objednavka->priezvisko }}" class=" form-control" required/>
+        <input type="text" name="priezvisko" value="{{ $objednavka->priezvisko }}" class=" form-control" required/>
 
         <label class="label">Tel. cislo</label>
-
         <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ $objednavka->telCislo }}" class=" form-control"
                required/>
 
         <label class="label">Rodne cislo</label>
-
-        <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ $objednavka->rodneCislo }}" class=" form-control"
+        <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ $objednavka->rodneCislo }}"
+               class=" form-control"
                placeholder="000000/0000" required/>
 
         <label class="label">Poradové císlo</label>
-
         <input type="text" name="poradoveCislo" value="{{$objednavka->poradoveCislo}}" class=" form-control"
                required/>
 
@@ -41,11 +37,9 @@
             @endforeach
         </select>
 
-
         <div class="control">
             <button type="submit" class="btn btn-primary">Odoslat</button>
         </div>
-
 
     </form>
 </div>

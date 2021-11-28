@@ -1,3 +1,4 @@
+<hr>
 <div class="card" style="width: 18rem;">
     <div class="card-header">
        <strong>Miesto:</strong> {{ $objednavka->miesto }}

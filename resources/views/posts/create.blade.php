@@ -7,7 +7,7 @@
     <form class="pridat" method="post" action="{{ route('posts.store') }}">
 
         @csrf
-        @include('partials.errors')
+        @include('chyby')
 
         <div class="form-group">
             <label class="label">Názov</label>
@@ -22,7 +22,7 @@
         <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Kategória: </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="fname" name="category" required onkeyup="showHint(this.value)">
+                <input type="text" class="form-control" id="fname" name="category" required>
             </div>
         </div>
 

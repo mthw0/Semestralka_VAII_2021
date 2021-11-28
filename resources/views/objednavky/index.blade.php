@@ -1,19 +1,25 @@
 @include('menu')
 
 <script>
-    document.title = document.title + " - " + "Objednávky"
+    document.title += " - Objednávky"
 </script>
+<script src="{{URL::asset('js/prepinac.js')}}"></script>
+
 <div class="container" id="obj">
     <h1>Objednávky
         <span>
-            <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-success">
-                +
-            </a>
-        </span>
+        <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-success">
+        +
+        </a>
+    </span>
     </h1>
-
-
     <hr>
+    <p>
+    <a id="prepinac" class="btn btn-secondary">
+        o/-
+    </a>
+
+    </p>
     <div id="grid">
         @foreach ($objednavky as $objednavka)
             <div class="karta">
@@ -22,9 +28,7 @@
         @endforeach
     </div>
 
-
-
-    <table class="table">
+    <table class="table table-hover table-responsive" id="tabulka" style="display: none">
         <thead>
         <tr>
             <th scope="col">Poradove cislo</th>
@@ -45,7 +49,6 @@
 
         </tbody>
     </table>
-
 
 
 </div>

@@ -214,3 +214,10 @@ a {
 #map {
     height: 100%;
 }
+
+.table-hover tbody tr {
+    &:hover {
+        border: $green 2px dashed;
+    }
+}
+
