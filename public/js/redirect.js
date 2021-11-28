@@ -3,7 +3,7 @@ $(document).ready(function() {
     var foo;
 
     function redirect() {
-        document.location.href = '/covid';
+        document.location.href = '/';
     }
 
     function updateSecs() {

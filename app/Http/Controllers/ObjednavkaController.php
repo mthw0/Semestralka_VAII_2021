@@ -63,7 +63,7 @@ class ObjednavkaController extends Controller
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int|unique:objednavkas,poradoveCislo'
+            'poradoveCislo' => 'required|int|unique:objednavkas,poradoveCislo,'.$objednavka->id
 
         ]);
 
@@ -77,7 +77,7 @@ class ObjednavkaController extends Controller
     public function destroy($id)
     {
         if (Objednavka::destroy($id)) {
-            return redirect('objednavky');
+            return redirect('admin/objednavky');
         }
 
     }

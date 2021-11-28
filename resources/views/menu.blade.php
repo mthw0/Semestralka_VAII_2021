@@ -80,6 +80,6 @@
     </div>
 
 
-<img src="img/Header-Background.webp" class="img-fluid" alt="Responsive image" width="100%">
+<img src="{{URL::asset('img/Header-Background.webp')}}" class="img-fluid" alt="Responsive image" width="100%">
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">⬆</button>

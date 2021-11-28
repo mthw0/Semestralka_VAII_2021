@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('posts');
+    return view('co_je_covid');
 });
 
 Route::get('/novinky', function () {

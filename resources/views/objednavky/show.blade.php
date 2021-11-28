@@ -1,6 +1,6 @@
 <div class="card" style="width: 18rem;">
     <div class="card-header">
-       <b>Miesto:</b> {{ $objednavka->miesto }}
+       <strong>Miesto:</strong> {{ $objednavka->miesto }}
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item"><b>Meno:</b> {{ $objednavka->meno }}</li>
@@ -12,8 +12,8 @@
 
 </div>
 
-<form action="{{ route('objednavky.destroy', [$objednavka->slug]) }}" method="post">
+<form action="{{ route('objednavky.destroy', [$objednavka->id]) }}" method="post">
     @csrf @method('delete')
-    <a href="{{ route('objednavky.edit', [$objednavka->slug]) }}" id="vymazat" class="btn btn-info"> Upraviť </a>
-    <button type="submit" value="Delete" id="vymazat" class="btn btn-danger">Vymazať</button>
+    <a href="{{ route('objednavky.edit', [$objednavka->id]) }}" class="vymazat btn btn-sm btn-info">✎ Upraviť</a>
+    <button type="submit" value="Delete" class="vymazat btn btn-sm btn-danger">🗑 Vymazať</button>
 </form>

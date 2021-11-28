@@ -1,19 +1,25 @@
 @include('menu')
 <script>
-    document.title=document.title+" - "+"Novinky";
+    document.title += " - Novinky";
 </script>
 
 <div class="container">
-    <h1>Novinky</h1>
-    <hr>
-
-    @auth
-    <div class="tlacidla">
-        <a href="{{ route('posts.create') }}" class="btn btn-outline-success">
-            <strong>+</strong>
-        </a>
+    <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">
+        Používaním tejto stránky súhlasíte s používaním súborov cookie.
+        <span onclick="OK()"><b>OK</b>&nbsp</span>
     </div>
-    @endauth
+
+
+    <h1>Novinky
+        @auth
+        <span>
+            <a href="{{ route('posts.create') }}" class="btn btn-success">
+                +
+            </a>
+        </span>
+        @endauth
+    </h1>
+    <hr>
 
     @foreach ($posts  as $post)
         @include('posts.show')

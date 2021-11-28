@@ -9,24 +9,24 @@
         @csrf
         <div class="field form-group">
             <label class="label">Meno</label>
-                <input type="text" name="meno" value="{{ old('meno') }}" class="form-control" placeholder="Meno" required/>
+                <input type="text" name="meno" pattern="[A-Ž]{1}[a-ž]" value="{{ old('meno') }}" class="form-control" placeholder="Meno" required/>
 
         </div>
         <div class="field form-group">
             <label class="label">Priezvisko</label>
-                <input type="text" name="priezvisko" value="{{ old('priezvisko') }}" class="form-control"
+                <input type="text" name="priezvisko" pattern="[A-Ž]{1}[a-ž]" value="{{ old('priezvisko') }}" class="form-control"
                        placeholder="Priezvisko" required/>
 
         </div>
         <div class="field form-group">
             <label class="label">Tel. cislo</label>
-                <input type="text" name="telCislo" value="{{ old('telCislo') }}" class="form-control" placeholder="0000000000"
+                <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ old('telCislo') }}" class="form-control" placeholder="0000000000"
                        required/>
 
         </div>
         <div class="field form-group">
             <label class="label">Rodne cislo</label>
-                <input type="text" name="rodneCislo" value="{{ old('rodneCislo') }}" class="form-control"
+                <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ old('rodneCislo') }}" class="form-control"
                        placeholder="000000/0000" required/>
 
         </div>
@@ -44,7 +44,6 @@
                 @endforeach
             </select>
         </div>
-
 
         <div class="field">
             <div class="control">

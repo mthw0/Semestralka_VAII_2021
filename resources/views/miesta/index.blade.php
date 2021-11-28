@@ -1,8 +1,7 @@
 @include('menu')
 
-<link href="/css/style.css" rel="stylesheet">
 <script>
-    document.title = document.title + " - " + "Očkovacie miesta";
+    document.title += " - Očkovacie miesta";
 </script>
 
 <div class="container" id="obj">
@@ -11,14 +10,16 @@
         <span onclick="OK()"><b>OK</b>&nbsp</span>
     </div>
 
-    <h1>Existujuce miesta</h1>
+    <h1>Očkovacie miesta
+        @auth
+        <span>
+            <a href="{{ route('miesta.create') }}" class="btn btn-success">
+                +
+            </a>
+        </span>
+        @endauth
+    </h1>
     <hr>
-
-    @auth
-        <a href="{{ route('miesta.create') }}" class="btn btn-success">
-            Nove miesto
-        </a>
-    @endauth
 
     <div id="grid">
         @foreach ($miesta as $miesto)

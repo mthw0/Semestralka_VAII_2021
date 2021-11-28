@@ -96,12 +96,6 @@
             <li>V priestoroch, kde sa pohybuje veľa ľudí (obchody, pošta, MHD,…), používajte jednorazové rukavice.</li>
 
         </ul>
-
-        <section id="section">
-            <iframe id="map" src="https://datawrapper.dwcdn.net/EghGA/32/"></iframe>
-            <button type="button" id="fullScreen" class="btn btn-primary" onclick="document.getElementById('map').requestFullscreen();">Full screen</button>
-        </section>
-
     </div>
 
 </div>
