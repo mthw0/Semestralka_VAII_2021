@@ -12,10 +12,10 @@
         @include('chyby')
 
         <label class="label">Meno</label>
-        <input type="text" name="meno" value="{{ $objednavka->meno }}" class="form-control" required/>
+        <input type="text" name="meno" pattern="[a-zA-Z]{1,100}" value="{{ $objednavka->meno }}" class="form-control" required/>
 
         <label class="label">Priezvisko</label>
-        <input type="text" name="priezvisko" value="{{ $objednavka->priezvisko }}" class=" form-control" required/>
+        <input type="text" name="priezvisko" pattern="[a-zA-Z]{1,100}" value="{{ $objednavka->priezvisko }}" class=" form-control" required/>
 
         <label class="label">Tel. cislo</label>
         <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ $objednavka->telCislo }}" class=" form-control"

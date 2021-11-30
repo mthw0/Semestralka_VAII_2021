@@ -62,7 +62,7 @@ class ObjednavkaSeeder extends Seeder
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Karolína',
-            'priezvisko' => 'Rýchla',
+            'priezvisko' => 'Nováková',
             'telCislo' => '0904123230',
             'rodneCislo' => '981213/1387',
             'poradoveCislo' => '6',
@@ -89,7 +89,7 @@ class ObjednavkaSeeder extends Seeder
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Dominika',
-            'priezvisko' => 'Rýchla',
+            'priezvisko' => 'Múdra',
             'telCislo' => '0910081230',
             'rodneCislo' => '585220/1282',
             'poradoveCislo' => '9',
@@ -98,7 +98,7 @@ class ObjednavkaSeeder extends Seeder
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Natália',
-            'priezvisko' => 'Rýchla',
+            'priezvisko' => 'Bystrá',
             'telCislo' => '0910450230',
             'rodneCislo' => '895520/1283',
             'poradoveCislo' => '10',

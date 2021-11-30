@@ -16,7 +16,7 @@ class Objednavky extends Migration
         Schema::create('objednavkas', function (Blueprint $table) {
             $table->id();
             $table->string('miesto');
-            $table->foreign('miesto')->on('ockovacie_miestos')->references('nazov')->onDelete('cascade');
+            $table->foreign('miesto')->on('ockovacie_miestos')->references('nazov')->onDelete('cascade')->onUpdate('cascade');
             $table->string('meno');
             $table->string('priezvisko');
             $table->string('telCislo');
