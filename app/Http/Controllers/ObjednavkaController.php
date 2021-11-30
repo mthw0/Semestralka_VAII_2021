@@ -17,7 +17,7 @@ class ObjednavkaController extends Controller
 
     public function create()
     {
-        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>Objednavka::all('poradoveCislo')->count()+1]);
+        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>Objednavka::max('poradoveCislo')+1]);
     }
 
     public function store(Request $request)

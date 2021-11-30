@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label class="label">Obsah</label>
-            <textarea name="content" class="form-control" placeholder="Obsah" minlength="5" maxlength="2000" required rows="10">{{ $post->content }}</textarea>
+            <textarea name="content" class="form-control" rows="20" placeholder="Obsah">{{ $post->content }}</textarea>
         </div>
 
         <div class="form-group row">

@@ -2,22 +2,19 @@
     <div class="">
         <h1 class="nadpis">{{ $post->title }}</h1>
         <hr>
-        <p><span class="created">Vytvorené: </span>{{ $post->created_at==null?'Dávno':$post->created_at->diffForHumans() }}</p>
-        <p><span class="created">#</span>{{ $post->category }}</p>
-        <p>{!! nl2br(e($post->content)) !!}</p>
+        <p><strong>Vytvorené: </strong>{{ $post->created_at==null?'Dávno':$post->created_at->diffForHumans() }}</p>
+        <p><strong>#{{ $post->category }}</strong></p>
+        <p>{!!  nl2br(e($post->content)) !!}</p>
 
         @auth
             <form method="post" action="{{ route('posts.destroy', [$post->slug]) }}">
                 @csrf @method('delete')
-                {{--dd($post->slug)--}}
+
                 <a href="{{ route('posts.edit', [$post])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
                 <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
-
             </form>
         @endauth
-
     </div>
-
     <script src="{{    URL::asset('js/koment.js') }}"></script>
     <hr>
     <div class="">

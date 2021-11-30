@@ -1,15 +1,13 @@
 @include('menu')
 <script>
+    document.title += " - Očkovanie";
     $(document).ready(function () {
         $("#faza1").load("faza1.php");
     });
 </script>
 <script src="js/jquery.js">
+</script>
 
-</script>
-<script>
-    document.title = document.title + " - " + "Očkovanie";
-</script>
 <div class="container">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert">
         Používaním tejto stránky súhlasíte s používaním súborov cookie.
