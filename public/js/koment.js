@@ -3,13 +3,9 @@ function showComment(cislo) {
 
     $("#koment_input"+cislo).css('display','block');
 
-    $("#koment_send"+cislo).css('display','block');
-    $("#koment_send"+cislo).css('maxWidth','100px');
-    $("#koment_send"+cislo).css('marginLeft','20px');
+    $("#koment_send"+cislo).css('display','block').css('maxWidth','100px').css('marginLeft','20px');
 
-    $("#koment_hide"+cislo).css('display','block');
-    $("#koment_hide"+cislo).css('maxWidth','100px');
-    $("#koment_hide"+cislo).css('marginLeft','20px');
+    $("#koment_hide"+cislo).css('display','block').css('maxWidth','100px').css('marginLeft','20px');
 }
 
 function hideComment(cislo) {

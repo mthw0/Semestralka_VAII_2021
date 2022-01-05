@@ -4,6 +4,7 @@
     document.title += " - Objednávky"
 </script>
 <script src="{{URL::asset('js/prepinac.js')}}"></script>
+<script src="{{URL::asset('js/delete.js')}}"> </script>
 
 <div class="container" id="obj">
     <h1>Objednávky

@@ -17,7 +17,14 @@ class ObjednavkaController extends Controller
 
     public function create()
     {
-        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>Objednavka::max('poradoveCislo')+1]);
+        $poradoveCislo=Objednavka::max('poradoveCislo')+1;
+        for ($x = 1; $x < Objednavka::max('poradoveCislo'); $x++) {
+            if (!Objednavka::where('poradoveCislo', '=', $x)->exists())
+            {
+                $poradoveCislo=$x;
+            }
+        }
+        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>$poradoveCislo]);
     }
 
     public function store(Request $request)
@@ -74,12 +81,20 @@ class ObjednavkaController extends Controller
         return redirect(route('objednavky.index'));
     }
 
+    /*
     public function destroy($id)
     {
         if (Objednavka::destroy($id)) {
             return redirect('admin/objednavky');
         }
 
+    }
+*/
+    public function destroy($id){
+
+        if (Objednavka::destroy($id)) {
+            return response('success',200);
+        }
     }
 
 }

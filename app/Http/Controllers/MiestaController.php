@@ -50,7 +50,7 @@ class MiestaController extends Controller
     {
         $miesto=OckovacieMiesto::find($miesto);
         $validated = $request->validate([
-            'nazov' => 'required|string|max:255|unique:ockovacie_miestos,nazov,'.$miesto->nazov,
+            'nazov' => 'required|string|max:255',
             'adresa' => 'required|string|max:255',
             'popis' => 'required|string|max:255',
             'dennaKapacita' => 'required|int'

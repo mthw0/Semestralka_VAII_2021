@@ -76,6 +76,8 @@ Route::prefix('/admin')->middleware('auth')->group(function (){
     Route::get('/objednavky/{slug}/edit',[ObjednavkaController::class,'edit'])->name('objednavky.edit');
     Route::patch('/objednavky/{slug}',[ObjednavkaController::class,'update'])->name('objednavky.update');
     Route::delete('/objednavky/{slug}',[ObjednavkaController::class,'destroy'])->name('objednavky.destroy');
+    //Route::delete('/objednavky/{id}','ObjednavkaController@ajax_destroy')->name('objednavky.destroy');
+    //Route::delete('objednavky/{id}', 'ObjednavkaController@ajax_destroy')->name('objednavky.destroy2');
 //----------------------------------------------------
     Route::get('/posts',[PostController::class,'index'])->name('posts.index');
     Route::get('/novyClanok',[PostController::class,'create'])->name('posts.create');
@@ -101,3 +103,5 @@ Route::get('/ockovanie',[OckovanieController::class,'index'])->name('ockovanie.i
 Route::resource('kontrola',KontrolaController::class);
 
 Route::redirect('/home','posts');
+
+

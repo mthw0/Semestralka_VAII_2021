@@ -12,8 +12,6 @@
 
 </div>
 
-<form action="{{ route('objednavky.destroy', [$objednavka->id]) }}" method="post">
-    @csrf @method('delete')
-    <a href="{{ route('objednavky.edit', [$objednavka->id]) }}" class="vymazat btn btn-sm btn-info">✎ Upraviť</a>
-    <button type="submit" value="Delete" class="vymazat btn btn-sm btn-danger">🗑 Vymazať</button>
-</form>
+<a href="" class="btn btn-sm btn-outline-danger deleteObjednavka vymazat" data-id="{{ $objednavka->id }}">🗑 Vymazať</a>
+<a href="{{ route('objednavky.edit', [$objednavka->id]) }}" class="vymazat btn btn-sm btn-info">✎ Upraviť</a>
+

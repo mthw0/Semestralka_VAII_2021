@@ -8,6 +8,5 @@
     <p>Budete automaticky presmerovaný o <span id="seconds">20</span> sekund.
     </p>
 
-
 </div>
 @include('footer')
