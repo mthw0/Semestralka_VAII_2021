@@ -35,15 +35,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href={{ URL::to('co-je-covid') }}>Čo je covid?</a>
-            <a class="nav-item nav-link" href={{ URL::to('aktualne-opatrenia') }}>Aktuálne opatrenia</a>
-            <a class="nav-item nav-link" href={{ URL::to('miesta') }}>Ockovacie miesta</a>
-            <a class="nav-item nav-link" href={{ URL::to('posts') }}>Novinky</a>
+            <a id="polozkyMenu1"  class="nav-item nav-link active" href={{ URL::to('co-je-covid') }}>Čo je covid?</a>
+            <a id="polozkyMenu2" class="nav-item nav-link" href={{ URL::to('aktualne-opatrenia') }}>Aktuálne opatrenia</a>
+            <a id="polozkyMenu3" class="nav-item nav-link" href={{ URL::to('miesta') }}>Očkovacie miesta</a>
+            <a id="polozkyMenu4" class="nav-item nav-link" href={{ URL::to('posts') }}>Novinky</a>
 
             @auth()
-            <a class="nav-item nav-link" href={{ URL::to('admin/objednavky') }}>Objednavky</a>
+            <a id="polozkyMenu5" class="nav-item nav-link" href={{ URL::to('admin/objednavky') }}>Objednávky</a>
             @endauth
-            <a class="nav-item nav-link" href={{ URL::to('ockovanie') }}>Ockovanie</a>
+            <a id="polozkyMenu6" class="nav-item nav-link" href={{ URL::to('ockovanie') }}>Očkovanie</a>
         </div>
 
         <ul class="navbar-nav ml-auto">

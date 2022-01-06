@@ -2,6 +2,13 @@
 
 <script>
     document.title += " - Očkovacie miesta";
+    $('#polozkyMenu1').removeClass('active');
+    $('#polozkyMenu2').removeClass('active');
+    $('#polozkyMenu3').addClass('active');
+    $('#polozkyMenu4').removeClass('active');
+    $('#polozkyMenu5').removeClass('active');
+    $('#polozkyMenu6').removeClass('active');
+    $('#polozkyMenu7').removeClass('active');
 </script>
 
 <div class="container" id="obj">

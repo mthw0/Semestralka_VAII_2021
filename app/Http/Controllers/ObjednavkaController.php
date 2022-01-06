@@ -22,6 +22,7 @@ class ObjednavkaController extends Controller
             if (!Objednavka::where('poradoveCislo', '=', $x)->exists())
             {
                 $poradoveCislo=$x;
+                break;
             }
         }
         return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>$poradoveCislo]);
@@ -38,8 +39,6 @@ class ObjednavkaController extends Controller
             'poradoveCislo' => 'required|int|unique:objednavkas'
 
         ]);
-
-        $validated['slug'] = Str::slug($validated['poradoveCislo'], '-');
 
         Objednavka::create($validated);
 
@@ -74,22 +73,11 @@ class ObjednavkaController extends Controller
 
         ]);
 
-        $validated['slug'] = Str::slug($validated['poradoveCislo'], '-');
-
         $objednavka->update($validated);
 
         return redirect(route('objednavky.index'));
     }
 
-    /*
-    public function destroy($id)
-    {
-        if (Objednavka::destroy($id)) {
-            return redirect('admin/objednavky');
-        }
-
-    }
-*/
     public function destroy($id){
 
         if (Objednavka::destroy($id)) {

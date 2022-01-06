@@ -16,13 +16,6 @@ class Objednavka extends Model
         'rodneCislo',
         'poradoveCislo',
         'miesto',
-        'slug'
     ];
-
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
 
 }

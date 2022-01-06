@@ -22,8 +22,6 @@ class Objednavky extends Migration
             $table->string('telCislo');
             $table->string('rodneCislo')->unique();
             $table->integer('poradoveCislo');
-            $table->integer('slug')->unique();
-
         });
     }
 

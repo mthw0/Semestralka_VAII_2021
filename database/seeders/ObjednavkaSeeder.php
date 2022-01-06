@@ -21,8 +21,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0910504904',
             'rodneCislo' => '961013/4354',
             'poradoveCislo' => '1',
-            'miesto' => 'Bratislava',
-            'slug' => '1'
+            'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Juraj',
@@ -30,8 +29,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0904340120',
             'rodneCislo' => '880502/8125',
             'poradoveCislo' => '2',
-            'miesto' => 'Kosice',
-            'slug' => '2'
+            'miesto' => 'Košice'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Štefan',
@@ -39,8 +37,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0904890230',
             'rodneCislo' => '781220/5784',
             'poradoveCislo' => '3',
-            'miesto' => 'Bratislava',
-            'slug' => '3'
+            'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Karol',
@@ -48,8 +45,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0904890230',
             'rodneCislo' => '881220/5784',
             'poradoveCislo' => '4',
-            'miesto' => 'Bratislava',
-            'slug' => '4'
+            'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Jana',
@@ -57,8 +53,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0904890230',
             'rodneCislo' => '781226/5786',
             'poradoveCislo' => '5',
-            'miesto' => 'Bratislava',
-            'slug' => '5'
+            'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Karolína',
@@ -66,8 +61,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0904123230',
             'rodneCislo' => '981213/1387',
             'poradoveCislo' => '6',
-            'miesto' => 'Kosice',
-            'slug' => '6'
+            'miesto' => 'Košice'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Eva',
@@ -75,8 +69,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0910890230',
             'rodneCislo' => '885220/1281',
             'poradoveCislo' => '7',
-            'miesto' => 'Zilina',
-            'slug' => '7'
+            'miesto' => 'Žilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Juraj',
@@ -84,8 +77,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0910890230',
             'rodneCislo' => '885224/1289',
             'poradoveCislo' => '8',
-            'miesto' => 'Zilina',
-            'slug' => '8'
+            'miesto' => 'Žilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Dominika',
@@ -93,8 +85,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0910081230',
             'rodneCislo' => '585220/1282',
             'poradoveCislo' => '9',
-            'miesto' => 'Zilina',
-            'slug' => '9'
+            'miesto' => 'Žilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Natália',
@@ -102,8 +93,7 @@ class ObjednavkaSeeder extends Seeder
             'telCislo' => '0910450230',
             'rodneCislo' => '895520/1283',
             'poradoveCislo' => '10',
-            'miesto' => 'Zilina',
-            'slug' => '10'
+            'miesto' => 'Žilina'
         ]);
     }
 }

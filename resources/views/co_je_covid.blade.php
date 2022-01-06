@@ -1,6 +1,13 @@
 @include ('menu')
 <script>
     document.title=document.title+" - "+"Čo je COVID-19?";
+    $('#polozkyMenu1').addClass('active');
+    $('#polozkyMenu2').removeClass('active');
+    $('#polozkyMenu3').removeClass('active');
+    $('#polozkyMenu4').removeClass('active');
+    $('#polozkyMenu5').removeClass('active');
+    $('#polozkyMenu6').removeClass('active');
+    $('#polozkyMenu7').removeClass('active');
 </script>
 
 <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert">

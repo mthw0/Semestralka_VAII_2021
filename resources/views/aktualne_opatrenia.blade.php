@@ -2,6 +2,13 @@
 
 <script>
     document.title += " - Aktuálne opatrenia";
+    $('#polozkyMenu1').removeClass('active');
+    $('#polozkyMenu2').addClass('active');
+    $('#polozkyMenu3').removeClass('active');
+    $('#polozkyMenu4').removeClass('active');
+    $('#polozkyMenu5').removeClass('active');
+    $('#polozkyMenu6').removeClass('active');
+    $('#polozkyMenu7').removeClass('active');
 </script>
 
 <div class="container">

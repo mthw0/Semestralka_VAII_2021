@@ -1,7 +1,14 @@
 @include('menu')
 
 <script>
-    document.title += " - Objednávky"
+    document.title += " - Objednávky";
+    $('#polozkyMenu1').removeClass('active');
+    $('#polozkyMenu2').removeClass('active');
+    $('#polozkyMenu3').removeClass('active');
+    $('#polozkyMenu4').removeClass('active');
+    $('#polozkyMenu5').addClass('active');
+    $('#polozkyMenu6').removeClass('active');
+    $('#polozkyMenu7').removeClass('active');
 </script>
 <script src="{{URL::asset('js/prepinac.js')}}"></script>
 <script src="{{URL::asset('js/delete.js')}}"> </script>

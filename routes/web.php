@@ -65,17 +65,17 @@ Route::prefix('/admin')->middleware('auth')->group(function (){
     Route::get('/noveMiesto',[MiestaController::class,'create'])->name('miesta.create');
     Route::post('/noveMiesto',[MiestaController::class,'store'])->name('miesta.store');
     //
-    Route::get('/miesta/{slug}/edit',[MiestaController::class,'edit'])->name('miesta.edit');
-    Route::patch('/miesta/{slug}',[MiestaController::class,'update'])->name('miesta.update');
-    Route::delete('/miesta/{slug}',[MiestaController::class,'destroy'])->name('miesta.destroy');
+    Route::get('/miesta/{id}/edit',[MiestaController::class,'edit'])->name('miesta.edit');
+    Route::patch('/miesta/{id}',[MiestaController::class,'update'])->name('miesta.update');
+    Route::delete('/miesta/{id}',[MiestaController::class,'destroy'])->name('miesta.destroy');
 //----------------------------------------------------
     Route::get('/objednavky',[ObjednavkaController::class,'index'])->name('objednavky.index');
     Route::get('/novaObjednavka',[ObjednavkaController::class,'create'])->name('objednavky.create');
     Route::post('/novaObjednavka',[ObjednavkaController::class,'store'])->name('objednavky.store');
     //
-    Route::get('/objednavky/{slug}/edit',[ObjednavkaController::class,'edit'])->name('objednavky.edit');
-    Route::patch('/objednavky/{slug}',[ObjednavkaController::class,'update'])->name('objednavky.update');
-    Route::delete('/objednavky/{slug}',[ObjednavkaController::class,'destroy'])->name('objednavky.destroy');
+    Route::get('/objednavky/{id}/edit',[ObjednavkaController::class,'edit'])->name('objednavky.edit');
+    Route::patch('/objednavky/{id}',[ObjednavkaController::class,'update'])->name('objednavky.update');
+    Route::delete('/objednavky/{id}',[ObjednavkaController::class,'destroy'])->name('objednavky.destroy');
     //Route::delete('/objednavky/{id}','ObjednavkaController@ajax_destroy')->name('objednavky.destroy');
     //Route::delete('objednavky/{id}', 'ObjednavkaController@ajax_destroy')->name('objednavky.destroy2');
 //----------------------------------------------------

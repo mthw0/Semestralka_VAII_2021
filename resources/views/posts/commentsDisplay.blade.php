@@ -2,7 +2,7 @@
 
     <div class="display-comment card oramovanie_male koment" @if($comment->parent_id != null) @endif>
         <div class="row-cols-2">
-            <img src="https://pic.onlinewebfonts.com/svg/img_550783.png" alt="Avatar" class="avatar">
+            <img src="{{URL::asset('img/img_550783.png')}}" alt="Avatar" class="avatar">
             <strong> {{ $comment->user->name ?? '[Deleted]' }} </strong>
         </div>
         <p class="koment_text">{{ $comment->body }}</p>
