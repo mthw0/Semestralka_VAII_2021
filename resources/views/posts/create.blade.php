@@ -11,12 +11,14 @@
 
         <div class="form-group">
             <label class="label">Názov</label>
-            <input type="text" name="title" value="{{ old('title') }}" class="form-control" placeholder="Názov" minlength="5" maxlength="100" required/>
+            <input type="text" name="title" value="{{ old('title') }}" class="form-control" placeholder="Názov"
+                   minlength="5" maxlength="100" required/>
         </div>
 
         <div class="form-group">
             <label class="label">Obsah</label>
-            <textarea name="content" class="form-control" placeholder="Obsah" minlength="5" maxlength="11900" required rows="10">{{ old('content') }}</textarea>
+            <textarea name="content" class="form-control" placeholder="Obsah" minlength="5" maxlength="11900" required
+                      rows="10">{{ old('content') }}</textarea>
         </div>
 
         <div class="form-group row">

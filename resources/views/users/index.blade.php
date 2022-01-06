@@ -2,13 +2,13 @@
 <title>Existujuci pouzivatelia</title>
 
 <div class="container">
-        <h1>Existujuci pouzivatelia</h1>
-        <hr>
+    <h1>Existujuci pouzivatelia</h1>
+    <hr>
     <div id="grid">
-    @foreach($users as $user)
-        <div class="karta">
-            @include('users.show')
-        </div>
+        @foreach($users as $user)
+            <div class="karta">
+                @include('users.show')
+            </div>
         @endforeach
     </div>
 </div>

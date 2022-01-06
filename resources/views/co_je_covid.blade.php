@@ -1,6 +1,6 @@
 @include ('menu')
 <script>
-    document.title=document.title+" - "+"Čo je COVID-19?";
+    document.title = document.title + " - " + "Čo je COVID-19?";
     $('#polozkyMenu1').addClass('active');
     $('#polozkyMenu2').removeClass('active');
     $('#polozkyMenu3').removeClass('active');

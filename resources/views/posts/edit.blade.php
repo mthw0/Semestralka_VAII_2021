@@ -14,7 +14,8 @@
 
         <div class="form-group">
             <label class="label">Názov</label>
-            <input type="text" name="title" value="{{ $post->title }}" class="form-control" placeholder="Názov" minlength="5" maxlength="100" required/>
+            <input type="text" name="title" value="{{ $post->title }}" class="form-control" placeholder="Názov"
+                   minlength="5" maxlength="100" required/>
         </div>
 
         <div class="form-group">
@@ -25,7 +26,8 @@
         <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Kategória: </label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="fname" name="category" required value="{{$post->category}} ">
+                <input type="text" class="form-control" id="fname" name="category" required
+                       value="{{$post->category}} ">
             </div>
         </div>
         <div class="form-group">

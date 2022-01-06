@@ -6,10 +6,7 @@
     <td>{{ $objednavka->telCislo }}</td>
     <td>{{ $objednavka->rodneCislo }}</td>
     <td>
-        <form action="{{ route('objednavky.destroy', [$objednavka->id]) }}" method="post">
-            @csrf @method('delete')
-            <a href="{{ route('objednavky.edit', [$objednavka->id]) }}" class="btn btn-sm btn-info">✎ Upraviť</a>
-            <button type="submit" value="Delete" class="btn btn-sm btn-danger">🗑 Vymazať</button>
-        </form>
+        <a href="" class="btn btn-sm btn-outline-danger deleteObjednavka" data-id="{{ $objednavka->id }}">🗑 Vymazať</a>
+        <a href="{{ route('objednavky.edit', [$objednavka->id]) }}" class="btn btn-sm btn-outline-info">✎ Upraviť</a>
     </td>
 </tr>

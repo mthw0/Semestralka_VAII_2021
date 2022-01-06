@@ -20,7 +20,7 @@
 
     <h1>Novinky
         @auth
-        <span>
+            <span>
             <a href="{{ route('posts.create') }}" class="btn btn-success">
                 +
             </a>

@@ -11,7 +11,7 @@
     $('#polozkyMenu7').removeClass('active');
 </script>
 <script src="{{URL::asset('js/prepinac.js')}}"></script>
-<script src="{{URL::asset('js/delete.js')}}"> </script>
+<script src="{{URL::asset('js/delete.js')}}"></script>
 
 <div class="container" id="obj">
     <h1>Objednávky
@@ -23,9 +23,9 @@
     </h1>
     <hr>
     <p>
-    <a id="prepinac" class="btn btn-secondary">
-        o/-
-    </a>
+        <a id="prepinac" class="btn btn-secondary">
+            o/-
+        </a>
 
     </p>
     <div id="grid">

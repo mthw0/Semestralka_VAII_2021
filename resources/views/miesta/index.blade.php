@@ -19,7 +19,7 @@
 
     <h1>Očkovacie miesta
         @auth
-        <span>
+            <span>
             <a href="{{ route('miesta.create') }}" class="btn btn-success">
                 +
             </a>

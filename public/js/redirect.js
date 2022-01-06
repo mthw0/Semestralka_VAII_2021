@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var seconds = 5;
     var foo;
 
@@ -20,6 +20,7 @@ $(document).ready(function() {
             updateSecs()
         }, 1000);
     }
+
     $("#seconds").html(seconds);
     countdownTimer();
 });

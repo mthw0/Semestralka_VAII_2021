@@ -9,12 +9,14 @@
         @csrf
         <div class="field form-group">
             <label class="label">Meno</label>
-            <input type="text" name="meno" pattern="[A-ZĽŠČĎŤŽÝÁÍÉ]{1}[a-zľščťúžďýáíé]{1,100}" value="{{ old('meno') }}" class="form-control"
+            <input type="text" name="meno" pattern="[A-ZĽŠČĎŤŽÝÁÍÉ]{1}[a-zľščťúžďýáíé]{1,100}" value="{{ old('meno') }}"
+                   class="form-control"
                    placeholder="Meno" required/>
         </div>
         <div class="field form-group">
             <label class="label">Priezvisko</label>
-            <input type="text" name="priezvisko" pattern="[A-ZĽŠČŤŽÝÁĎÍÉ]{1}[a-zľščťďúžýáíé]{1,100}" value="{{ old('priezvisko') }}"
+            <input type="text" name="priezvisko" pattern="[A-ZĽŠČŤŽÝÁĎÍÉ]{1}[a-zľščťďúžýáíé]{1,100}"
+                   value="{{ old('priezvisko') }}"
                    class="form-control"
                    placeholder="Priezvisko" required/>
         </div>
