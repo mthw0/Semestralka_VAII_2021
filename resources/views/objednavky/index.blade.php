@@ -50,9 +50,7 @@
         </thead>
         <tbody>
         @foreach ($objednavky as $objednavka)
-            <tr class="karta">
-                @include('objednavky.row')
-            </tr>
+            @include('objednavky.row')
         @endforeach
 
         </tbody>

@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="sk">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,8 +30,8 @@
             crossorigin="anonymous"></script>
 
     <script src="{{ URL::asset('js/top.js') }}"></script>
-    <script src="{{ URL::asset('js/cookie-message.js')}}">
-        <script src="{{ URL::asset('js/koment.js') }}"></script>
+    <script src="{{ URL::asset('js/cookie-message.js')}}"></script>
+    <script src="{{ URL::asset('js/koment.js') }}"></script>
 
 </head>
 <body>
@@ -62,7 +63,7 @@
             @else
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
 
@@ -88,6 +89,6 @@
 </div>
 
 
-<img src="{{URL::asset('img/Header-Background.webp')}}" class="img-fluid" alt="Responsive image" width="100%">
+<img src="{{URL::asset('img/Header-Background.webp')}}" class="img-fluid" alt="Responsive image">
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">⬆</button>

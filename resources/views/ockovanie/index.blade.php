@@ -18,7 +18,7 @@
 <div class="container">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert">
         Používaním tejto stránky súhlasíte s používaním súborov cookie.
-        <span onclick="OK()"><b>OK</b>&nbsp</span>
+        <span onclick="OK()"><b>OK</b>&nbsp;</span>
     </div>
 
     <h1>Kto a kedy sa bude môcť dať zaočkovať?</h1>
