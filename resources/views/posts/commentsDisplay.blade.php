@@ -21,16 +21,16 @@
                 </div>
                 <div class="form-group row row-cols-2">
                     <input style="display: none" id='koment_send{{ $comment->id }}' type="submit"
-                           class="btn btn-success" value="Odoslať">
+                           class="btn btn-outline--success" value="Odoslať">
                     <a style="display: none" id='koment_hide{{ $comment->id }}'
-                       onclick="hideComment({{ $comment->id }})" class="btn btn-danger">
+                       onclick="hideComment({{ $comment->id }})" class="btn btn-outline-danger">
                         Zrušiť</a>
                 </div>
 
             </form>
             <form method="post" action="{{ route('comments.destroy', $comment->id) }}">
                 @csrf @method('delete')
-                <a href="" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
+                {{--<a href="" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>--}}
                 <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
             </form>
         @endauth

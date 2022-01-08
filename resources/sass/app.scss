@@ -160,10 +160,10 @@ strong {
     margin-top: 10px;
 }
 .karta {
-    border: 1px solid #cdcdcd;
-    padding: 20px;
+    border: 2px solid #cdcdcd;
+    //padding: 20px;
     box-shadow: 0 4px 8px 0 $shadow1, 0 6px 20px 0 $shadow2;
-    margin-bottom: 50px;
+    //margin-bottom: 50px;
 }
 .card {
     position: unset;
@@ -178,7 +178,8 @@ strong {
 .koment {
     padding: 10px;
     margin-bottom: 10px;
-    border-left: $koment-border 4px solid;
+    border-left: $green 4px solid;
+    border-radius: 20px 0 20px 0;
 }
 [id*="koment_hide"] {
     height: 37px;
@@ -221,3 +222,6 @@ a {
     }
 }
 
+hr {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}

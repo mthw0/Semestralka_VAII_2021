@@ -160,7 +160,7 @@
                 onclick="!document.fullscreenElement?document.getElementById('section').requestFullscreen():document.exitFullscreen();">
             Zväčšiť/Zmenšiť
         </button>
-        <iframe id="map" src="https://datawrapper.dwcdn.net/8MF8E/54/"></iframe>
+        <iframe id="map" src="https://datawrapper.dwcdn.net/5i1e9/1/"></iframe>
     </section>
 
 </div>

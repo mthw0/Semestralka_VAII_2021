@@ -16,14 +16,14 @@
 <div class="container" id="obj">
     <h1>Objednávky
         <span>
-        <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-success">
+        <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-outline-success" style="border-radius: 20%">
         +
         </a>
     </span>
     </h1>
     <hr>
     <p>
-        <a id="prepinac" class="btn btn-secondary">
+        <a id="prepinac" class="btn btn-outline-secondary" style="border-radius: 20%">
             o/-
         </a>
 

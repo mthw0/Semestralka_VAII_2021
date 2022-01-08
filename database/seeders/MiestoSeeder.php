@@ -23,14 +23,14 @@ class MiestoSeeder extends Seeder
                 'dennaKapacita'=>'100'
             ],
             [
-                'nazov' => 'Kosice',
+                'nazov' => 'Košice',
                 'adresa' => 'Hlavná 2',
                 'popis' => 'Ockovacie miesto v Košickej nemocnici',
                 'obrazok'=> 'null',
                 'dennaKapacita'=>'50'
             ],
             [
-                'nazov' => 'Zilina',
+                'nazov' => 'Žilina',
                 'adresa' => 'Vojtecha Spanyola 43',
                 'popis' => 'Ockovacie miesto pri Žilinskej nemocnici',
                 'obrazok'=> 'null',
