@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class ObjednavkaSeeder extends Seeder
 {
@@ -15,85 +14,50 @@ class ObjednavkaSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('objednavkas')->insert([
-            'meno' => 'Janko',
-            'priezvisko' => 'Hraško',
-            'telCislo' => '0910504904',
-            'rodneCislo' => '961013/4354',
-            'poradoveCislo' => '1',
-            'miesto' => 'Bratislava'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Juraj',
-            'priezvisko' => 'Novák',
-            'telCislo' => '0904340120',
-            'rodneCislo' => '880502/8125',
-            'poradoveCislo' => '1',
-            'miesto' => 'Kosice'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Štefan',
-            'priezvisko' => 'Múdry',
-            'telCislo' => '0904890230',
-            'rodneCislo' => '781220/5784',
-            'poradoveCislo' => '2',
-            'miesto' => 'Bratislava'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Karol',
-            'priezvisko' => 'Múdry',
-            'telCislo' => '0904890230',
-            'rodneCislo' => '881220/5784',
-            'poradoveCislo' => '3',
-            'miesto' => 'Bratislava'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Jana',
-            'priezvisko' => 'Múdra',
-            'telCislo' => '0904890230',
-            'rodneCislo' => '781226/5786',
-            'poradoveCislo' => '4',
-            'miesto' => 'Bratislava'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Karolína',
-            'priezvisko' => 'Nováková',
-            'telCislo' => '0904123230',
-            'rodneCislo' => '981213/1387',
-            'poradoveCislo' => '2',
-            'miesto' => 'Kosice'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Eva',
-            'priezvisko' => 'Rýchla',
-            'telCislo' => '0910890230',
-            'rodneCislo' => '885220/1281',
-            'poradoveCislo' => '1',
-            'miesto' => 'Zilina'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Juraj',
-            'priezvisko' => 'Rýchly',
-            'telCislo' => '0910890230',
-            'rodneCislo' => '885224/1289',
-            'poradoveCislo' => '2',
-            'miesto' => 'Zilina'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Dominika',
-            'priezvisko' => 'Múdra',
-            'telCislo' => '0910081230',
-            'rodneCislo' => '585220/1282',
-            'poradoveCislo' => '3',
-            'miesto' => 'Zilina'
-        ]);
-        DB::table('objednavkas')->insert([
-            'meno' => 'Natália',
-            'priezvisko' => 'Bystrá',
-            'telCislo' => '0910450230',
-            'rodneCislo' => '895520/1283',
-            'poradoveCislo' => '4',
-            'miesto' => 'Zilina'
-        ]);
+        $firstname = array( 'Johnathon', 'Anthony', 'Erasmo', 'Raleigh', 'Nancie', 'Tama', 'Camellia', 'Augustine', 'Christeen',
+            'Luz', 'Diego', 'Lyndia', 'Thomas', 'Georgianna', 'Leigha', 'Alejandro', 'Marquis', 'Joan', 'Stephania',
+            'Elroy', 'Zonia', 'Buffy', 'Sharie', 'Blythe', 'Gaylene', 'Elida', 'Randy', 'Margarete', 'Margarett',
+            'Dion', 'Tomi', 'Arden', 'Clora', 'Laine', 'Becki', 'Margherita', 'Bong', 'Jeanice', 'Qiana', 'Lawanda',
+            'Rebecka', 'Maribel', 'Tami', 'Yuri', 'Michele', 'Rubi', 'Larisa', 'Lloyd', 'Tyisha', 'Samatha',
+        );
+        $lastname = array(
+            'Mischke', 'Serna', 'Pingree', 'Mcnaught', 'Pepper', 'Schildgen', 'Mongold', 'Wrona', 'Geddes', 'Lanz',
+            'Fetzer', 'Schroeder', 'Block', 'Mayoral', 'Fleishman', 'Roberie', 'Latson', 'Lupo', 'Motsinger', 'Drews',
+            'Coby', 'Redner', 'Culton', 'Howe', 'Stoval', 'Michaud', 'Mote', 'Menjivar', 'Wiers', 'Paris', 'Grisby',
+            'Noren', 'Damron', 'Kazmierczak', 'Haslett', 'Guillemette', 'Buresh', 'Center', 'Kucera', 'Catt', 'Badon',
+            'Grumbles', 'Antes', 'Byron', 'Volkman', 'Klemp', 'Pekar', 'Pecora', 'Schewe', 'Ramage',
+        );
+
+        for ($x = 1; $x <= rand(10, 100); $x++) {
+            DB::table('objednavkas')->insert([
+                'meno' => $firstname[rand ( 0 , count($firstname) -1)],
+                'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
+                'telCislo' => '0' . rand(100000000, 999999999),
+                'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
+                'poradoveCislo' => $x,
+                'miesto' => 'Bratislava'
+            ]);
+        }
+        for ($x = 1; $x <= rand(10, 100); $x++) {
+            DB::table('objednavkas')->insert([
+                'meno' => $firstname[rand ( 0 , count($firstname) -1)],
+                'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
+                'telCislo' => '0' . rand(100000000, 999999999),
+                'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
+                'poradoveCislo' => $x,
+                'miesto' => 'Kosice'
+            ]);
+        }
+        for ($x = 1; $x <= rand(10, 100); $x++) {
+            DB::table('objednavkas')->insert([
+                'meno' => $firstname[rand ( 0 , count($firstname) -1)],
+                'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
+                'telCislo' => '0' . rand(100000000, 999999999),
+                'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
+                'poradoveCislo' => $x,
+                'miesto' => 'Zilina'
+            ]);
+        }
+
     }
 }

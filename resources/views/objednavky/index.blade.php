@@ -28,7 +28,7 @@
         </a>
 
     </p>
-    <div id="grid">
+    <div id="grid" style="display: none">
         @foreach ($objednavky as $objednavka)
             <div class="karta">
                 @include('objednavky.show')
@@ -36,7 +36,7 @@
         @endforeach
     </div>
 
-    <table class="table table-hover table-responsive" id="tabulka" style="display: none">
+    <table class="table table-hover table-responsive" id="tabulka" style="display: inline-table">
         <thead>
         <tr>
             <th scope="col">Miesto</th>

@@ -20,5 +20,11 @@ class UserSeeder extends Seeder
             'email' => 'admin@covid-info.sk',
             'password' => Hash::make('admin')
         ]);
+        DB::table('users')->insert([
+            'name' => 'moderator',
+            'email' => 'moderator@covid-info.sk',
+            'password' => Hash::make('moderator')
+        ]);
+
     }
 }
