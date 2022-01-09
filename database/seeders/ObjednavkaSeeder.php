@@ -28,15 +28,15 @@ class ObjednavkaSeeder extends Seeder
             'priezvisko' => 'Novák',
             'telCislo' => '0904340120',
             'rodneCislo' => '880502/8125',
-            'poradoveCislo' => '2',
-            'miesto' => 'Košice'
+            'poradoveCislo' => '1',
+            'miesto' => 'Kosice'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Štefan',
             'priezvisko' => 'Múdry',
             'telCislo' => '0904890230',
             'rodneCislo' => '781220/5784',
-            'poradoveCislo' => '3',
+            'poradoveCislo' => '2',
             'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
@@ -44,7 +44,7 @@ class ObjednavkaSeeder extends Seeder
             'priezvisko' => 'Múdry',
             'telCislo' => '0904890230',
             'rodneCislo' => '881220/5784',
-            'poradoveCislo' => '4',
+            'poradoveCislo' => '3',
             'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
@@ -52,7 +52,7 @@ class ObjednavkaSeeder extends Seeder
             'priezvisko' => 'Múdra',
             'telCislo' => '0904890230',
             'rodneCislo' => '781226/5786',
-            'poradoveCislo' => '5',
+            'poradoveCislo' => '4',
             'miesto' => 'Bratislava'
         ]);
         DB::table('objednavkas')->insert([
@@ -60,40 +60,40 @@ class ObjednavkaSeeder extends Seeder
             'priezvisko' => 'Nováková',
             'telCislo' => '0904123230',
             'rodneCislo' => '981213/1387',
-            'poradoveCislo' => '6',
-            'miesto' => 'Košice'
+            'poradoveCislo' => '2',
+            'miesto' => 'Kosice'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Eva',
             'priezvisko' => 'Rýchla',
             'telCislo' => '0910890230',
             'rodneCislo' => '885220/1281',
-            'poradoveCislo' => '7',
-            'miesto' => 'Žilina'
+            'poradoveCislo' => '1',
+            'miesto' => 'Zilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Juraj',
             'priezvisko' => 'Rýchly',
             'telCislo' => '0910890230',
             'rodneCislo' => '885224/1289',
-            'poradoveCislo' => '8',
-            'miesto' => 'Žilina'
+            'poradoveCislo' => '2',
+            'miesto' => 'Zilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Dominika',
             'priezvisko' => 'Múdra',
             'telCislo' => '0910081230',
             'rodneCislo' => '585220/1282',
-            'poradoveCislo' => '9',
-            'miesto' => 'Žilina'
+            'poradoveCislo' => '3',
+            'miesto' => 'Zilina'
         ]);
         DB::table('objednavkas')->insert([
             'meno' => 'Natália',
             'priezvisko' => 'Bystrá',
             'telCislo' => '0910450230',
             'rodneCislo' => '895520/1283',
-            'poradoveCislo' => '10',
-            'miesto' => 'Žilina'
+            'poradoveCislo' => '4',
+            'miesto' => 'Zilina'
         ]);
     }
 }

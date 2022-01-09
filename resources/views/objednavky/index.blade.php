@@ -39,8 +39,8 @@
     <table class="table table-hover table-responsive" id="tabulka" style="display: none">
         <thead>
         <tr>
-            <th scope="col">Poradove cislo</th>
             <th scope="col">Miesto</th>
+            <th scope="col">Poradové číslo</th>
             <th scope="col">Meno</th>
             <th scope="col">Priezvisko</th>
             <th scope="col">Tel. cislo</th>

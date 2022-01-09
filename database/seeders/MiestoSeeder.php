@@ -20,21 +20,21 @@ class MiestoSeeder extends Seeder
                 'adresa' => 'Nemocničná 4',
                 'popis' => 'Ockovacie miesto v Bratislavskej nemocnici',
                 'obrazok'=> 'null',
-                'dennaKapacita'=>'100'
+                'dennaKapacita'=>'4'
             ],
             [
-                'nazov' => 'Košice',
+                'nazov' => 'Kosice',
                 'adresa' => 'Hlavná 2',
                 'popis' => 'Ockovacie miesto v Košickej nemocnici',
                 'obrazok'=> 'null',
-                'dennaKapacita'=>'50'
+                'dennaKapacita'=>'4'
             ],
             [
-                'nazov' => 'Žilina',
+                'nazov' => 'Zilina',
                 'adresa' => 'Vojtecha Spanyola 43',
                 'popis' => 'Ockovacie miesto pri Žilinskej nemocnici',
                 'obrazok'=> 'null',
-                'dennaKapacita'=>'80'
+                'dennaKapacita'=>'5'
             ]
         ];
         DB::table('ockovacie_miestos')->insert($data);

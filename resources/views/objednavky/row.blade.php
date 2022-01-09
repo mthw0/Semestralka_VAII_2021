@@ -1,6 +1,6 @@
 <tr>
-    <th scope="row">{{ $objednavka->poradoveCislo }}</th>
-    <td>{{ $objednavka->miesto }}</td>
+    <th scope="row">{{ $objednavka->miesto }}</th>
+    <td>{{ $objednavka->poradoveCislo }}</td>
     <td>{{ $objednavka->meno }}</td>
     <td>{{ $objednavka->priezvisko }}</td>
     <td>{{ $objednavka->telCislo }}</td>

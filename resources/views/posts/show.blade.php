@@ -1,4 +1,4 @@
-<h1>{{ $post->title }}</h1>
+<h2>{{ $post->title }}</h2>
 <hr>
 <p><strong>Vytvorené: </strong>{{ $post->created_at==null?'Dávno':$post->created_at->diffForHumans() }}</p>
 <p><strong>#{{ $post->category }}</strong></p>
@@ -15,10 +15,10 @@
 
 <script src="{{    URL::asset('js/koment.js') }}"></script>
 <hr>
-<div class="">
+<div style="margin-bottom: 200px">
     <h4>Komentáre</h4>
     @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
-    <hr/>
+
 
     @guest
         <div class="alert alert-primary" role="alert">

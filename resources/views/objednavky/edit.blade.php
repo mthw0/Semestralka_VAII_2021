@@ -4,9 +4,9 @@
 
 <title>Upravit objednavku</title>
 <div class="container">
-    <h1 class="title">Upravit objednavku</h1>
+    <h1 class="title">Úprava registrácie na očkovanie</h1>
 
-    <form method="post" action="{{ route('objednavky.update',[$objednavka->slug]) }}">
+    <form method="post" action="{{ route('objednavky.update',[$objednavka->id]) }}">
         @csrf
         @method('patch')
         @include('chyby')
@@ -19,16 +19,16 @@
         <input type="text" name="priezvisko" pattern="[A-ZĽŠČŤŽÝĎÁÍÉ]{1}[a-zľščťžďúýáíé]{1,100}"
                value="{{ $objednavka->priezvisko }}" class=" form-control" required/>
 
-        <label class="label">Tel. cislo</label>
+        <label class="label">Tel. číslo</label>
         <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ $objednavka->telCislo }}" class=" form-control"
                required/>
 
-        <label class="label">Rodne cislo</label>
+        <label class="label">Rodné číslo</label>
         <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ $objednavka->rodneCislo }}"
                class=" form-control"
                placeholder="000000/0000" required/>
 
-        <label class="label">Poradové císlo</label>
+        <label class="label">Poradové číslo</label>
         <input type="text" name="poradoveCislo" value="{{$objednavka->poradoveCislo}}" class=" form-control"
                required/>
 
@@ -40,7 +40,7 @@
         </select>
 
         <div class="control">
-            <button type="submit" class="btn btn-primary">Odoslat</button>
+            <button type="submit" class="btn btn-primary">Odoslať</button>
         </div>
 
     </form>

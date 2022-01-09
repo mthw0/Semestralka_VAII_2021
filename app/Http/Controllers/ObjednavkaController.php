@@ -12,11 +12,13 @@ class ObjednavkaController extends Controller
 
     public function index()
     {
-        return view('objednavky.index',['objednavky'=>Objednavka::all()]);
+        $objednavky=Objednavka::orderBy('miesto')->orderBy('poradoveCislo')->get();
+        return view('objednavky.index',['objednavky'=>$objednavky]);
     }
 
     public function create()
     {
+        /*
         $poradoveCislo=Objednavka::max('poradoveCislo')+1;
         for ($x = 1; $x < Objednavka::max('poradoveCislo'); $x++) {
             if (!Objednavka::where('poradoveCislo', '=', $x)->exists())
@@ -25,24 +27,40 @@ class ObjednavkaController extends Controller
                 break;
             }
         }
-        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>$poradoveCislo]);
+        */
+        //return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>$poradoveCislo]);
+        return view('objednavky.create',['nazvy'=>OckovacieMiesto::query()->get('nazov'),'cislo'=>0]);
     }
 
     public function store(Request $request)
     {
+        $poradoveCislo = Objednavka::query()->where('miesto','=',$request['miesto'])->max('poradoveCislo')+1;
+        //-
+        for ($x = 1; $x < Objednavka::query()->where('miesto','=',$request['miesto'])->max('poradoveCislo'); $x++) {
+            if (!Objednavka::where('miesto','=',$request['miesto'])->where('poradoveCislo', '=', $x)->exists())
+            {
+                $poradoveCislo=$x;
+                break;
+            }
+        }
+        //-
+        $request->merge([
+            'poradoveCislo' => $poradoveCislo,
+        ]);
+
         $validated = $request->validate([
             'miesto' => 'required|string|max:255',
             'meno' => 'required|string|max:255',
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int|unique:objednavkas'
+            'poradoveCislo' => 'required|int'
 
         ]);
 
-        Objednavka::create($validated);
+            Objednavka::create($validated);
+            return view ('objednavky.uspech');
 
-        return view ('objednavky.uspech');
     }
 
 
