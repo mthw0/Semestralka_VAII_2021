@@ -35,7 +35,7 @@
         <label for="exampleFormControlSelect2">Miesto</label>
         <select class="form-control" id="exampleFormControlSelect2" name="miesto" value="{{$objednavka->miesto}}">
             @foreach($nazvy as $nazov)
-                <option>{{str_replace(['{"nazov":"','"}'],"",$nazov)}}</option>
+                <option>{{$nazov}}</option>
             @endforeach
         </select>
 

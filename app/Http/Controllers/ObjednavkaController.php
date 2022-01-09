@@ -18,7 +18,13 @@ class ObjednavkaController extends Controller
 
     public function create()
     {
-        return view('objednavky.create', ['nazvy' => OckovacieMiesto::query()->get('nazov'), 'cislo' => 0]);
+        $nazvy = [];
+        foreach (OckovacieMiesto::all() as $miesto) {
+            if (Objednavka::all()->where('miesto', '=', $miesto->nazov)->count() < $miesto->dennaKapacita) {
+                array_push($nazvy, $miesto->nazov);
+            }
+        }
+        return view('objednavky.create', ['nazvy' => $nazvy]);
     }
 
     public function store(Request $request)

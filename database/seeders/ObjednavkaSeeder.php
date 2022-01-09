@@ -28,7 +28,7 @@ class ObjednavkaSeeder extends Seeder
             'Grumbles', 'Antes', 'Byron', 'Volkman', 'Klemp', 'Pekar', 'Pecora', 'Schewe', 'Ramage',
         );
 
-        for ($x = 1; $x <= rand(10, 100); $x++) {
+        for ($x = 1; $x <= rand(1, 15); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
@@ -38,7 +38,7 @@ class ObjednavkaSeeder extends Seeder
                 'miesto' => 'Bratislava'
             ]);
         }
-        for ($x = 1; $x <= rand(10, 100); $x++) {
+        for ($x = 1; $x <= rand(10, 20); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
@@ -48,7 +48,7 @@ class ObjednavkaSeeder extends Seeder
                 'miesto' => 'Kosice'
             ]);
         }
-        for ($x = 1; $x <= rand(10, 100); $x++) {
+        for ($x = 1; $x <= rand(10, 25); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],

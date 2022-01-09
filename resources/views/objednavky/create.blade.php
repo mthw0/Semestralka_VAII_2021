@@ -34,14 +34,14 @@
         </div>
         <div class="field form-group" style="display: none">
             <label class="label">Poradové císlo</label>
-            <input type="text" name="poradoveCislo" value="{{$cislo}}" class="" placeholder="{{$cislo}}"
+            <input type="text" name="poradoveCislo" value="0" class="" placeholder="0"
                    required readonly="readonly"/>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect2">Miesto</label>
             <select class="form-control" id="exampleFormControlSelect2" name="miesto">
-                @foreach($nazvy as $nazov)
-                    <option>{{str_replace(['{"nazov":"','"}'],"",$nazov)}}</option>
+                @foreach((array)$nazvy as $nazov)
+                    <option>{{$nazov}}</option>
                 @endforeach
             </select>
         </div>
