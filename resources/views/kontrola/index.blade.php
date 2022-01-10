@@ -1,8 +1,8 @@
 @include('menu')
-<title>Kontrola</title>
+
 <div class="container">
     <h1>Kontrola</h1>
-    <p>Táto stránka slúžu na kontrolu či je niekto obiednaný.</p>
+    <p>Na tejto stránke si môžete overiť dátum a čas registrovanej vakcinácie.</p>
     <form method="post" action="{{ route('kontrola.store') }}">
         @csrf
         <div class="form-group">

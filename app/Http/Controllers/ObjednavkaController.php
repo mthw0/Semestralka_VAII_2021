@@ -7,7 +7,7 @@ use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Objednavka;
-use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class ObjednavkaController extends Controller
 {
@@ -22,9 +22,8 @@ class ObjednavkaController extends Controller
     {
         $nazvy = [];
         foreach (OckovacieMiesto::all() as $miesto) {
-            //if (Objednavka::all()->where('miesto', '=', $miesto->nazov)->count() < $miesto->dennaKapacita) {
-                array_push($nazvy, $miesto->nazov);
-            //}
+            $nazvy[] = $miesto->nazov;
+
         }
         return view('objednavky.create', ['nazvy' => $nazvy]);
     }
@@ -33,17 +32,17 @@ class ObjednavkaController extends Controller
     {
         $poradoveCislo = Objednavka::query()->where('miesto', '=', $request['miesto'])->max('poradoveCislo') + 1;
 
-        for ($x = 1; $x < Objednavka::query()->where('miesto', '=', $request['miesto'])->max('poradoveCislo'); $x++) {
+        for ($x = 0; $x < Objednavka::query()->where('miesto', '=', $request['miesto'])->max('poradoveCislo'); $x++) {
             if (!Objednavka::where('miesto', '=', $request['miesto'])->where('poradoveCislo', '=', $x)->exists()) {
                 $poradoveCislo = $x;
                 break;
             }
         }
 
-        $dennaKapcita = OckovacieMiesto::where('nazov','=',$request->miesto)->pluck('dennaKapacita');
+        $dennaKapcita = OckovacieMiesto::where('nazov', '=', $request->miesto)->pluck('dennaKapacita');
         $request->merge([
             'poradoveCislo' => $poradoveCislo,
-            'den' => intdiv($poradoveCislo,$dennaKapcita[0])
+            'den' => intdiv($poradoveCislo, $dennaKapcita[0])
         ]);
 
         $validated = $request->validate([
@@ -52,19 +51,19 @@ class ObjednavkaController extends Controller
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int',
-            'den' => 'required|int'
+            'den' => 'required|int',
+            'poradoveCislo' => 'required|int'
 
         ]);
 
         Objednavka::create($validated);
 
-        $minutes_to_add = 10 * ($poradoveCislo%50);
+        $minutes_to_add = 10 * ($poradoveCislo % 50);
         $time = new DateTime('2022-03-01 07:00');
         $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
-        $time->add(new DateInterval('P'.$request->den.'D'));
+        $time->add(new DateInterval('P' . $request->den . 'D'));
 
-        return view('objednavky.uspech', ['datum'=>$time]);
+        return view('objednavky.uspech', ['datum' => $time]);
 
     }
 
@@ -80,9 +79,7 @@ class ObjednavkaController extends Controller
         $objednavka = Objednavka::find($objednavka);
         $nazvy = [];
         foreach (OckovacieMiesto::all() as $miesto) {
-            if (Objednavka::all()->where('miesto', '=', $miesto->nazov)->count() < $miesto->dennaKapacita) {
-                array_push($nazvy, $miesto->nazov);
-            }
+            $nazvy[] = $miesto->nazov;
         }
         return view('objednavky.edit', compact('objednavka', 'nazvy'));
     }
@@ -97,7 +94,9 @@ class ObjednavkaController extends Controller
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int|unique:objednavkas,poradoveCislo,' . $objednavka->id
+            'poradoveCislo' => ['required', 'int', Rule::unique('objednavkas')->where(function ($query) use ($request) {
+                return $query->where('miesto', $request->miesto);
+            })]
 
         ]);
 

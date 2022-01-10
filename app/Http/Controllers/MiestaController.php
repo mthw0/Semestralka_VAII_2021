@@ -10,7 +10,7 @@ class MiestaController extends Controller
 {
     public function index()
     {
-        return view('miesta.index', ['miesta'=>OckovacieMiesto::all()]);
+        return view('miesta.index', ['miesta'=>OckovacieMiesto::all()->sortBy('nazov')]);
     }
 
     public function create()

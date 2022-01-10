@@ -1,5 +1,8 @@
 @php
-    $minutes_to_add = 10 * ($objednavka->poradoveCislo%50);
+    use App\Models\OckovacieMiesto;
+    $dennaKapcita = OckovacieMiesto::where('nazov', $objednavka->miesto)->pluck('dennaKapacita');
+    $dennaKapcita=$dennaKapcita[0];
+    $minutes_to_add = 10 * ($objednavka->poradoveCislo%$dennaKapcita);
     $time = new DateTime('2022-03-01 07:00');
     $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
     $time->add(new DateInterval('P'.$objednavka->den.'D'));
@@ -7,7 +10,7 @@
 
 <tr>
     <th scope="row">{{ $objednavka->miesto }}</th>
-    {{--<td>{{ $objednavka->poradoveCislo }}</td>--}}
+    <td>{{ $objednavka->poradoveCislo }}</td>
     <td>{{ $time->format('d.m.y H:i') }}</td>
     <td>{{ $objednavka->meno }}</td>
     <td>{{ $objednavka->priezvisko }}</td>

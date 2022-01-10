@@ -1,8 +1,8 @@
 @include('menu')
 
-<title>Vytvorit novu objednavku</title>
+<title>Registrácia na očkovanie</title>
 <div class="container">
-    <h1 class="title">Vytvorit novu objednavku</h1>
+    <h1 class="title">Registrácia na očkovanie</h1>
     @include('chyby')
 
     <form method="post" action="{{ route('objednavky.store') }}">
@@ -21,24 +21,24 @@
                    placeholder="Priezvisko" required/>
         </div>
         <div class="field form-group">
-            <label class="label">Tel. cislo</label>
+            <label class="label">Tel. číslo</label>
             <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ old('telCislo') }}" class="form-control"
                    placeholder="0000000000"
                    required/>
         </div>
         <div class="field form-group">
-            <label class="label">Rodne cislo</label>
+            <label class="label">Rodné číslo</label>
             <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ old('rodneCislo') }}"
                    class="form-control"
                    placeholder="000000/0000" required/>
         </div>
         <div class="field form-group" style="display: none">
-            <label class="label">Poradové císlo</label>
+            <label class="label">Poradové číslo</label>
             <input type="text" name="poradoveCislo" value="0" class="" placeholder="0"
                    required readonly="readonly"/>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect2">Miesto</label>
+            <label for="exampleFormControlSelect2">Očkovacie miesto</label>
             <select class="form-control" id="exampleFormControlSelect2" name="miesto">
                 @foreach((array)$nazvy as $nazov)
                     <option>{{$nazov}}</option>
@@ -47,7 +47,7 @@
         </div>
         <div class="field">
             <div class="control">
-                <button type="submit" class="btn btn-primary">Odoslat</button>
+                <button type="submit" class="btn btn-primary">Odoslať</button>
             </div>
         </div>
     </form>

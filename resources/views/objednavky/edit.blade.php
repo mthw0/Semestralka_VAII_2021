@@ -35,7 +35,11 @@
         <label for="exampleFormControlSelect2">Miesto</label>
         <select class="form-control" id="exampleFormControlSelect2" name="miesto" value="{{$objednavka->miesto}}">
             @foreach($nazvy as $nazov)
-                <option>{{$nazov}}</option>
+                @if ($objednavka->miesto == $nazov)
+                    <option selected>{{ $nazov }}</option>
+                @else
+                    <option>{{ $nazov }}</option>
+                @endif
             @endforeach
         </select>
 

@@ -47,7 +47,7 @@ class ObjednavkaSeeder extends Seeder
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
                 'miesto' => 'Kosice',
-                'den' => intdiv($x,100)
+                'den' => intdiv($x,80)
             ]);
         }
         for ($x = 0; $x < rand(100,1000); $x++) {
@@ -58,7 +58,7 @@ class ObjednavkaSeeder extends Seeder
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
                 'miesto' => 'Zilina',
-                'den' => intdiv($x,100)
+                'den' => intdiv($x,70)
             ]);
         }
         for ($x = 0; $x < rand(100,1000); $x++) {
@@ -69,7 +69,7 @@ class ObjednavkaSeeder extends Seeder
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
                 'miesto' => 'Bojnice',
-                'den' => intdiv($x,80)
+                'den' => intdiv($x,50)
             ]);
         }
 
