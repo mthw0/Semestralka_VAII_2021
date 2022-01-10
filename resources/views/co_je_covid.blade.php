@@ -27,12 +27,12 @@
             Kontaktujte nás a nechajte sa vyšetriť na COVID-19.
         </p>
 
-        <a href="" class="btn btn-success">Požiadať o PCR vyšetrenie</a>
-        <a href="" class="btn btn-success">Požiadať o Ag vyšetrenie</a>
-        <p><a href="">Úprava/overenie požiadavky (zrušenie/preobjednanie termínu na testovanie)</a></p>
-        <p><a href="">Zoznam laboratórií na vyšetrenie ochorenia COVID – 19</a></p>
-        <p><a href="">Zoznam antigénových testovacích miest</a></p>
-        <p><a href="">Najčastejšie otázky ohľadne testovania</a></p>
+        <a href="https://covidforms.nczisk.sk/covid-19-patient-form_pcr.php" class="btn btn-success">Požiadať o PCR vyšetrenie</a>
+        <a href="https://covidforms.nczisk.sk/covid-19-patient-form_ag.php" class="btn btn-success">Požiadať o Ag vyšetrenie</a>
+        <p><a href="https://covidforms.nczisk.sk/covid-19-validate-patient.php">Úprava/overenie požiadavky (zrušenie/preobjednanie termínu na testovanie)</a></p>
+        <p><a href="https://korona.gov.sk/">Zoznam laboratórií na vyšetrenie ochorenia COVID – 19</a></p>
+        <p><a href="https://korona.gov.sk/">Zoznam antigénových testovacích miest</a></p>
+        <p><a href="https://korona.gov.sk/">Najčastejšie otázky ohľadne testovania</a></p>
 
         <h2>Vrátili ste sa zo zahraničia z rizikovej krajiny?</h2>
         <a href="" class="btn btn-success">Vyplňte formulár ehranica</a>

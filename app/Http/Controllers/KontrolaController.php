@@ -41,10 +41,10 @@ class KontrolaController extends Controller
     {
         $cislo = $request->get('rodneCislo');
         $exists = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->count();
-        $premenna = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->get();
-        $poradoveCislo = $premenna[0]->poradoveCislo;
-        $den=DB::table('objednavkas')->select('den')->where('rodneCislo','=',$cislo)->get();
         if ($exists>0) {
+            $premenna = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->get();
+            $poradoveCislo = $premenna[0]->poradoveCislo;
+            $den=DB::table('objednavkas')->select('den')->where('rodneCislo','=',$cislo)->get();
             $minutes_to_add = 10 * ($poradoveCislo%50);
             $time = new DateTime('2022-03-01 07:00');
             $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
