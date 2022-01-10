@@ -28,34 +28,48 @@ class ObjednavkaSeeder extends Seeder
             'Grumbles', 'Antes', 'Byron', 'Volkman', 'Klemp', 'Pekar', 'Pecora', 'Schewe', 'Ramage',
         );
 
-        for ($x = 1; $x <= rand(1, 15); $x++) {
+        for ($x = 1; $x <= rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
                 'telCislo' => '0' . rand(100000000, 999999999),
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
-                'miesto' => 'Bratislava'
+                'miesto' => 'Bratislava',
+                'den' => intdiv($x,100)
             ]);
         }
-        for ($x = 1; $x <= rand(10, 20); $x++) {
+        for ($x = 1; $x <= rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
                 'telCislo' => '0' . rand(100000000, 999999999),
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
-                'miesto' => 'Kosice'
+                'miesto' => 'Kosice',
+                'den' => intdiv($x,100)
             ]);
         }
-        for ($x = 1; $x <= rand(10, 25); $x++) {
+        for ($x = 1; $x <= rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
                 'telCislo' => '0' . rand(100000000, 999999999),
                 'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
                 'poradoveCislo' => $x,
-                'miesto' => 'Zilina'
+                'miesto' => 'Zilina',
+                'den' => intdiv($x,100)
+            ]);
+        }
+        for ($x = 1; $x <= rand(100,1000); $x++) {
+            DB::table('objednavkas')->insert([
+                'meno' => $firstname[rand ( 0 , count($firstname) -1)],
+                'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
+                'telCislo' => '0' . rand(100000000, 999999999),
+                'rodneCislo' => rand(100000, 999999) . "/" . rand(1000, 9999),
+                'poradoveCislo' => $x,
+                'miesto' => 'Bojnice',
+                'den' => intdiv($x,80)
             ]);
         }
 

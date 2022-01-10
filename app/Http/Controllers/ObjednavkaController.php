@@ -12,7 +12,7 @@ class ObjednavkaController extends Controller
 
     public function index()
     {
-        $objednavky = Objednavka::orderBy('miesto')->orderBy('poradoveCislo')->get();
+        $objednavky = Objednavka::orderBy('miesto')->orderBy('poradoveCislo')->paginate(20);
         return view('objednavky.index', ['objednavky' => $objednavky]);
     }
 
@@ -20,9 +20,9 @@ class ObjednavkaController extends Controller
     {
         $nazvy = [];
         foreach (OckovacieMiesto::all() as $miesto) {
-            if (Objednavka::all()->where('miesto', '=', $miesto->nazov)->count() < $miesto->dennaKapacita) {
+            //if (Objednavka::all()->where('miesto', '=', $miesto->nazov)->count() < $miesto->dennaKapacita) {
                 array_push($nazvy, $miesto->nazov);
-            }
+            //}
         }
         return view('objednavky.create', ['nazvy' => $nazvy]);
     }
@@ -38,8 +38,10 @@ class ObjednavkaController extends Controller
             }
         }
 
+        $dennaKapcita = OckovacieMiesto::where('nazov','=',$request->miesto)->pluck('dennaKapacita');
         $request->merge([
             'poradoveCislo' => $poradoveCislo,
+            'den' => intdiv($poradoveCislo,$dennaKapcita[0])
         ]);
 
         $validated = $request->validate([
@@ -48,7 +50,8 @@ class ObjednavkaController extends Controller
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
-            'poradoveCislo' => 'required|int'
+            'poradoveCislo' => 'required|int',
+            'den' => 'required|int'
 
         ]);
 

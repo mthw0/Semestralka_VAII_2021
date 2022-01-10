@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Objednavka extends Model
 {
-    use HasFactory;
+    //use HasFactory;
     public $timestamps = false;
     protected $fillable = [
         'meno',
@@ -16,6 +16,7 @@ class Objednavka extends Model
         'rodneCislo',
         'poradoveCislo',
         'miesto',
+        'den'
     ];
 
 }
