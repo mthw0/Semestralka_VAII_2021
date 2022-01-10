@@ -28,7 +28,7 @@ class ObjednavkaSeeder extends Seeder
             'Grumbles', 'Antes', 'Byron', 'Volkman', 'Klemp', 'Pekar', 'Pecora', 'Schewe', 'Ramage',
         );
 
-        for ($x = 1; $x <= rand(100,1000); $x++) {
+        for ($x = 0; $x < rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
@@ -39,7 +39,7 @@ class ObjednavkaSeeder extends Seeder
                 'den' => intdiv($x,100)
             ]);
         }
-        for ($x = 1; $x <= rand(100,1000); $x++) {
+        for ($x = 0; $x < rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
@@ -50,7 +50,7 @@ class ObjednavkaSeeder extends Seeder
                 'den' => intdiv($x,100)
             ]);
         }
-        for ($x = 1; $x <= rand(100,1000); $x++) {
+        for ($x = 0; $x < rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],
@@ -61,7 +61,7 @@ class ObjednavkaSeeder extends Seeder
                 'den' => intdiv($x,100)
             ]);
         }
-        for ($x = 1; $x <= rand(100,1000); $x++) {
+        for ($x = 0; $x < rand(100,1000); $x++) {
             DB::table('objednavkas')->insert([
                 'meno' => $firstname[rand ( 0 , count($firstname) -1)],
                 'priezvisko' => $lastname[rand ( 0 , count($firstname) -1)],

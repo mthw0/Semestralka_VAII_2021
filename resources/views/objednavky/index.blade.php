@@ -40,7 +40,7 @@
         <thead>
         <tr>
             <th scope="col">Miesto</th>
-            <th scope="col">Poradové číslo</th>
+            {{--<th scope="col">Poradové číslo</th>--}}
             <th scope="col">Datum a čas</th>
             <th scope="col">Meno</th>
             <th scope="col">Priezvisko</th>
@@ -53,7 +53,6 @@
         @foreach ($objednavky as $objednavka)
             @include('objednavky.row')
         @endforeach
-
 
         </tbody>
     </table>

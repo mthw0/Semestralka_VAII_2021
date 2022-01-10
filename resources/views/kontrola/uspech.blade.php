@@ -5,7 +5,7 @@
     <div class="alert alert-success" role="alert">
         Objednavka existuje!
     </div>
-    <p>Vase poradove cislo je: {{str_replace(['[{"poradoveCislo":','}]'],"",$cislo)}}</p>
+    <h2>Dátum a čas vašej vakcinácie je: {{$datum->format('d.m.Y H:i')}}</h2>
     <p>Budete automaticky presmerovaný o <span id="seconds">20</span> sekund.
     </p>
 

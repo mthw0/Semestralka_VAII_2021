@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Objednavka;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -40,7 +42,15 @@ class KontrolaController extends Controller
         $cislo = $request->get('rodneCislo');
         $exists = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->count();
         $premenna = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->get();
-        if ($exists>0) return view('kontrola.uspech',['cislo'=>$premenna]);
+        $den=DB::table('objednavkas')->select('den')->where('rodneCislo','=',$cislo)->get();
+        //$den->dd();
+        if ($exists>0) {
+            $minutes_to_add = 10 * ($premenna[0]->poradoveCislo%50);
+            $time = new DateTime('2022-03-01 07:00');
+            $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+            $time->add(new DateInterval('P'.$den[0]->den.'D'));
+            return view('kontrola.uspech',['datum'=>$time]);
+        }
         else return view('kontrola.neuspech');
     }
 

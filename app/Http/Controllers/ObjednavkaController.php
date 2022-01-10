@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\OckovacieMiesto;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Objednavka;
 use Illuminate\Support\Str;
@@ -56,7 +58,13 @@ class ObjednavkaController extends Controller
         ]);
 
         Objednavka::create($validated);
-        return view('objednavky.uspech');
+
+        $minutes_to_add = 10 * ($poradoveCislo%50);
+        $time = new DateTime('2022-03-01 07:00');
+        $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+        $time->add(new DateInterval('P'.$request->den.'D'));
+
+        return view('objednavky.uspech', ['datum'=>$time]);
 
     }
 

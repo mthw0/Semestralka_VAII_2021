@@ -14,7 +14,7 @@
     <li class="list-group-item"><b>Priezvisko:</b> {{ $objednavka->priezvisko }}</li>
     <li class="list-group-item"><b>Tel. cislo:</b> {{ $objednavka->telCislo }}</li>
     <li class="list-group-item"><b>Rodne cislo:</b> {{ $objednavka->rodneCislo }}</li>
-    <li class="list-group-item"><b>Poradove cislo:</b> {{ $objednavka->poradoveCislo }}</li>
+    {{--<li class="list-group-item"><b>Poradove cislo:</b> {{ $objednavka->poradoveCislo }}</li>--}}
     <li class="list-group-item"><b>Datum a čas:</b> {{ $time->format('d.m.y H:i') }}</li>
     <li class="list-group-item">
         <a href="" class="btn btn-sm btn-outline-danger deleteObjednavka vymazat" data-id="{{ $objednavka->id }}">🗑 Vymazať</a>
