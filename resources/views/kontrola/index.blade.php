@@ -12,6 +12,7 @@
             <small id="numberHelp" class="form-text text-muted">V tvare: 000000/0000</small>
         </div>
         <button type="submit" class="btn btn-primary">Odoslať</button>
+        <a href="{{route('ockovanie.index')}}" class="btn btn-danger">Späť</a>
     </form>
 
 </div>

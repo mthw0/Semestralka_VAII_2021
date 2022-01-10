@@ -35,7 +35,7 @@
         <p><a href="https://korona.gov.sk/">Najčastejšie otázky ohľadne testovania</a></p>
 
         <h2>Vrátili ste sa zo zahraničia z rizikovej krajiny?</h2>
-        <a href="" class="btn btn-success">Vyplňte formulár ehranica</a>
+        <a href="https://korona.gov.sk/" class="btn btn-success">Vyplňte formulár ehranica</a>
 
     </div>
     <div class="two-thirds main">
