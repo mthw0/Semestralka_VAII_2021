@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group row row-cols-2">
                     <input style="display: none" id='koment_send{{ $comment->id }}' type="submit"
-                           class="btn btn-outline--success" value="Odoslať">
+                           class="btn btn-outline-success" value="Odoslať">
                     <a style="display: none" id='koment_hide{{ $comment->id }}'
                        onclick="hideComment({{ $comment->id }})" class="btn btn-outline-danger">
                         Zrušiť</a>

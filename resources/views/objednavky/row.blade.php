@@ -10,8 +10,8 @@
 
 <tr>
     <th scope="row">{{ $objednavka->miesto }}</th>
-    <td>{{ $objednavka->poradoveCislo }}</td>
-    <td>{{ $time->format('d.m.y H:i') }}</td>
+    <td>{{ $objednavka->poradoveCislo+1 }}.</td>
+    <td>{{ $time->format('d.m.Y H:i') }}</td>
     <td>{{ $objednavka->meno }}</td>
     <td>{{ $objednavka->priezvisko }}</td>
     <td>{{ $objednavka->telCislo }}</td>

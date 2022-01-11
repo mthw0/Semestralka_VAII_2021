@@ -16,7 +16,8 @@
 <div class="container" id="obj">
     <h1>Objednávky
         <span>
-        <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-outline-success" style="border-radius: 20%">
+        <a href="{{ route('objednavky.create') }}" target="_blank" class="btn btn-outline-success"
+           style="border-radius: 20%">
         +
         </a>
     </span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Objednavka;
+use App\Models\OckovacieMiesto;
 use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
@@ -42,14 +43,18 @@ class KontrolaController extends Controller
         $cislo = $request->get('rodneCislo');
         $exists = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->count();
         if ($exists>0) {
-            $premenna = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->get();
-            $poradoveCislo = $premenna[0]->poradoveCislo;
+            $poradoveCislo = DB::table('objednavkas')->select('poradoveCislo')->where('rodneCislo','=',$cislo)->pluck('poradoveCislo');
+            $poradoveCislo = $poradoveCislo[0];
             $den=DB::table('objednavkas')->select('den')->where('rodneCislo','=',$cislo)->get();
-            $minutes_to_add = 10 * ($poradoveCislo%50);
+            $miesto=DB::table('objednavkas')->select('miesto')->where('rodneCislo','=',$cislo)->pluck('miesto');
+            $miesto=$miesto[0];
+            $dennaKapcita = OckovacieMiesto::where('nazov', $miesto)->pluck('dennaKapacita');
+            $dennaKapcita=$dennaKapcita[0];
+            $minutes_to_add = 10 * ($poradoveCislo%$dennaKapcita);
             $time = new DateTime('2022-03-01 07:00');
             $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
             $time->add(new DateInterval('P'.$den[0]->den.'D'));
-            return view('kontrola.uspech',['datum'=>$time]);
+            return view('kontrola.uspech',['datum'=>$time, 'miesto'=>$miesto]);
         }
         else return view('kontrola.neuspech');
     }

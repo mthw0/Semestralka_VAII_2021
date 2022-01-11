@@ -3,14 +3,13 @@
 <title>Vytvorit nove miesto</title>
 <div class="container">
 
-    <h1 class="title">Vytvorit nove miesto</h1>
-
+    <h1 class="title">Vytvorenie nového očkovacieho miesta</h1>
 
     <form method="post" action="{{ route('miesta.store') }}">
         @csrf
         <div>
-            <label class="label">Nazov</label>
-            <input type="text" name="nazov" value="{{ old('nazov') }}" class="form-control" placeholder="Nazov"
+            <label class="label">Názov</label>
+            <input type="text" name="nazov" value="{{ old('nazov') }}" class="form-control" placeholder="Názov"
                    required/>
             <label class="label">Adresa</label>
             <input type="text" name="adresa" value="{{ old('adresa') }}" class="form-control" placeholder="Adresa"
@@ -19,17 +18,14 @@
             <input type="text" name="popis" value="{{ old('popis') }}" class="form-control" placeholder="Popis"
                    required/>
 
-            <label class="label">Denna kapacita</label>
+            <label class="label">Denná kapacita</label>
             <input type="text" name="dennaKapacita" value="{{ old('dennaKapacita') }}" class="form-control"
-                   placeholder="Denna kapacita" required/>
+                   placeholder="Denná kapacita" required/>
 
-            <button type="submit" class="btn btn-outline-primary">Odoslat</button>
+            <button type="submit" class="btn btn-outline-primary">Odoslať</button>
 
         </div>
-
-
     </form>
-
 </div>
 
 @include('footer')
