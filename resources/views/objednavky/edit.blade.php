@@ -2,7 +2,6 @@
 @section('action', route('objednavky.create'))
 @include('menu')
 
-<title>Upravit objednavku</title>
 <div class="container">
     <h1 class="title">Úprava registrácie na očkovanie</h1>
 
@@ -33,7 +32,7 @@
                required/>
 
         <label for="exampleFormControlSelect2">Miesto</label>
-        <select class="form-control" id="exampleFormControlSelect2" name="miesto" value="{{$objednavka->miesto}}">
+        <select class="form-control" id="exampleFormControlSelect2" name="miesto" >
             @foreach($nazvy as $nazov)
                 @if ($objednavka->miesto == $nazov)
                     <option selected>{{ $nazov }}</option>

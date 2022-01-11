@@ -15,7 +15,7 @@
 
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">
         Používaním tejto stránky súhlasíte s používaním súborov cookie.
-        <span onclick="OK()"><b>OK</b>&nbsp</span>
+        <span onclick="OK()"><b>OK</b>&nbsp;</span>
     </div>
 
     <h1>Aktuálne opatrenia</h1>
@@ -113,7 +113,6 @@
                         režimov pre jedno hromadné podujatie.</strong>
                 </li>
             </ul>
-            </p>
             <h3> Definícia plne očkovanej osoby</h3>
             <p>Za plne očkovanú osobu sa považuje:
             <ul>
@@ -134,7 +133,6 @@
                     osoba do 12 rokov a dvoch mesiacov veku.
                 </li>
             </ul>
-            </p>
 
             <h3>Definícia osoby v režime OTP</h3>
             <p>Za osobu v režime očkovaná, testovaná, alebo prekonala ochorenie COVID-19 (ďalej len „ osoba v režime

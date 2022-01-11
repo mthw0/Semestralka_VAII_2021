@@ -23,9 +23,8 @@
             <a href="{{ route('posts.create') }}" class="btn btn-outline-success" style="border-radius: 20%">+</a>
         </span>
         @endauth
-        <hr>
     </h1>
-
+    <hr>
     @foreach ($posts  as $post)
         @include('posts.show')
     @endforeach

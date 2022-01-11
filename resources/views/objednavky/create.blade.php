@@ -1,6 +1,5 @@
 @include('menu')
 
-<title>Registrácia na očkovanie</title>
 <div class="container">
     <h1 class="title">Registrácia na očkovanie</h1>
     @include('chyby')

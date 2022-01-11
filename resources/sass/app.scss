@@ -32,7 +32,7 @@ li {
 .one-third {
     float: left;
     width: 33.3333333333%;
-    background-color: #dee0e2;
+    background-color: $side-bg;
     padding: 30px;
 }
 
@@ -74,7 +74,7 @@ h2 {
 }
 
 strong {
-    color: #1b4b72;
+    color: $strong-blue;
 }
 
 .border {
@@ -86,7 +86,7 @@ strong {
     border-radius: 25px;
     border: 2px solid $side-color;
     margin-left: -20px;
-    background-color: beige;
+    background-color: $side-color;
 }
 
 .main {
@@ -190,10 +190,8 @@ strong {
 }
 
 .karta {
-    border: 2px solid #cdcdcd;
-    //padding: 20px;
+    border: 2px solid $karta-color;
     box-shadow: 0 4px 8px 0 $shadow1, 0 6px 20px 0 $shadow2;
-    //margin-bottom: 50px;
 }
 
 .card {
@@ -259,8 +257,9 @@ a {
 }
 
 .table-hover tbody tr {
+    border-left: white 2px solid;
     &:hover {
-        border: $green 2px dashed;
+        border-left: $green 2px solid;
     }
 }
 
