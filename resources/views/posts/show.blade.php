@@ -15,7 +15,7 @@
 
 <script src="{{    URL::asset('js/koment.js') }}"></script>
 <hr>
-<div style="margin-bottom: 200px">
+<div id="koment_div">
     <h4>Komentáre</h4>
     @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
 

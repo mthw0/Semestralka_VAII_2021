@@ -17,7 +17,7 @@
         <span onclick="OK()"><b>OK</b>&nbsp;</span>
     </div>
 
-    <h1 style="margin-bottom: 150px">Novinky
+    <h1>Novinky
         @auth
             <span>
             <a href="{{ route('posts.create') }}" class="btn btn-outline-success" style="border-radius: 20%">+</a>
