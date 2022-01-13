@@ -1,4 +1,17 @@
 @include('menu')
+<script>
+    document.title += " - Očkovanie";
+    $(document).ready(function () {
+        $("#faza1").load("faza1.php");
+    });
+    $('#polozkyMenu1').removeClass('active');
+    $('#polozkyMenu2').removeClass('active');
+    $('#polozkyMenu3').removeClass('active');
+    $('#polozkyMenu4').removeClass('active');
+    $('#polozkyMenu5').removeClass('active');
+    $('#polozkyMenu6').addClass('active');
+    $('#polozkyMenu7').removeClass('active');
+</script>
 
 <div class="container">
     <h1 class="title">Registrácia na očkovanie</h1>
