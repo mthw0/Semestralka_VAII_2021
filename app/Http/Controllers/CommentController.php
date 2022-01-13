@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Objednavka;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 
@@ -24,10 +25,11 @@ class CommentController extends Controller
         return back();
     }
 
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        $comment->delete();
-        return back();
+        if (Comment::destroy($id)) {
+            return response('success', 200);
+        }
     }
 
 }

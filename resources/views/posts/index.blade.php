@@ -11,6 +11,7 @@
 </script>
 
 <script src="{{URL::asset('js/deletePost.js')}}"></script>
+<script src="{{URL::asset('js/deleteComment.js')}}"></script>
 
 <div class="container">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">

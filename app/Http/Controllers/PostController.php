@@ -30,7 +30,7 @@ class PostController extends Controller
 
         $validated['slug'] = Str::slug($validated['title'], '-');
 
-        $post = Post::create($validated);
+        Post::create($validated);
 
         return redirect(route('posts.index'));
     }

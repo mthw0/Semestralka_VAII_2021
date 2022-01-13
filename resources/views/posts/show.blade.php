@@ -15,7 +15,6 @@
     <h4>Komentáre</h4>
     @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
 
-
     @guest
         <div class="alert alert-primary" role="alert">
             Komentáre môžu pridávať len prihlásení používatelia!

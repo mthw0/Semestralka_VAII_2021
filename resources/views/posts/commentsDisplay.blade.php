@@ -27,12 +27,9 @@
                         Zrušiť</a>
                 </div>
 
-            </form>
-            <form method="post" action="{{ route('comments.destroy', $comment->id) }}">
-                @csrf @method('delete')
                 {{--<a href="" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>--}}
-                <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
-            </form>
+                <a href="" class="btn btn-sm btn-outline-danger deleteComment" data-id="{{ $comment->id }}" style="max-width: 100px">🗑
+                    Vymazať</a>
         @endauth
         @include('posts.commentsDisplay', ['comments' => $comment->replies])
     </div>
