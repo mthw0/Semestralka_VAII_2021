@@ -5,12 +5,8 @@
 <p>{!!  nl2br(e($post->content)) !!}</p>
 
 @auth
-    <form method="post" action="{{ route('posts.destroy', [$post->slug]) }}">
-        @csrf @method('delete')
-
-        <a href="{{ route('posts.edit', [$post])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
-        <button type="submit" class="btn btn-sm btn-outline-danger">🗑 Vymazať</button>
-    </form>
+    <a href="{{ route('posts.edit', [$post])}}" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>
+    <a href="" class="btn btn-sm btn-outline-danger deletePost" data-id="{{ $post->id }}">🗑 Vymazať</a>
 @endauth
 
 <script src="{{    URL::asset('js/koment.js') }}"></script>

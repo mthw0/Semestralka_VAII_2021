@@ -7,12 +7,10 @@
     <li class="list-group-item"><strong>Kapacita: </strong>{{ $miesto->dennaKapacita }}</li>
     @auth
         <li class="list-group-item">
-            <form method="post" action="{{ route('miesta.destroy', $miesto->id) }}">
-                @csrf @method('delete')
                 <a href="{{ route('miesta.edit', [$miesto->id])}}" class="vymazat btn btn-sm btn-outline-info">✎
                     Upraviť</a>
-                <button type="submit" class="vymazat btn btn-sm btn-outline-danger">🗑 Vymazať</button>
-            </form>
+
+            <a href="" class="btn btn-sm btn-outline-danger deleteMiesto" data-id="{{ $miesto->id }}">🗑 Vymazať</a>
         </li>
     @endauth
 </ul>

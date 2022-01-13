@@ -8,8 +8,9 @@
     $('#polozkyMenu5').removeClass('active');
     $('#polozkyMenu6').removeClass('active');
     $('#polozkyMenu7').removeClass('active');
-
 </script>
+
+<script src="{{URL::asset('js/deletePost.js')}}"></script>
 
 <div class="container">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Objednavka;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -59,9 +60,11 @@ class PostController extends Controller
         return redirect(route('posts.index'));
     }
 
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        $post->delete();
-        return redirect(route('posts.index'));
+        if (Post::destroy($id)) {
+            return response('success', 200);
+        }
     }
+
 }

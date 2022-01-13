@@ -76,13 +76,10 @@ Route::prefix('/admin')->middleware('auth')->group(function (){
     Route::get('/objednavky/{id}/edit',[ObjednavkaController::class,'edit'])->name('objednavky.edit');
     Route::patch('/objednavky/{id}',[ObjednavkaController::class,'update'])->name('objednavky.update');
     Route::delete('/objednavky/{id}',[ObjednavkaController::class,'destroy'])->name('objednavky.destroy');
-    //Route::delete('/objednavky/{id}','ObjednavkaController@ajax_destroy')->name('objednavky.destroy');
-    //Route::delete('objednavky/{id}', 'ObjednavkaController@ajax_destroy')->name('objednavky.destroy2');
 //----------------------------------------------------
     Route::get('/posts',[PostController::class,'index'])->name('posts.index');
     Route::get('/novyClanok',[PostController::class,'create'])->name('posts.create');
     Route::post('/novyClanok',[PostController::class,'store'])->name('posts.store');
-    //Route::get('/posts/{slug}',[PostController::class,'show'])->name('posts.show');
     Route::get('/posts/{slug}/edit',[PostController::class,'edit'])->name('posts.edit');
     Route::patch('/posts/{slug}',[PostController::class,'update'])->name('posts.update');
     Route::delete('/posts/{slug}',[PostController::class,'destroy'])->name('posts.destroy');

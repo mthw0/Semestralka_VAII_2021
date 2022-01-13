@@ -11,6 +11,9 @@
     $('#polozkyMenu7').removeClass('active');
 </script>
 
+<script src="{{URL::asset('js/deleteMiesto.js')}}"></script>
+
+
 <div class="container" id="obj">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert" style="display: none">
         Používaním tejto stránky súhlasíte s používaním súborov cookie.

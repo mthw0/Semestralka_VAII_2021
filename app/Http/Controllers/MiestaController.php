@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Objednavka;
 use App\Models\OckovacieMiesto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -66,10 +67,9 @@ class MiestaController extends Controller
     public function destroy($id)
     {
         if (OckovacieMiesto::destroy($id)) {
-            return redirect('miesta');
+            return response('success', 200);
         }
     }
-
 
 
 }
