@@ -61,6 +61,13 @@ class MiestaController extends Controller
 
         $miesto->update($validated);
 
+        $objednavky=Objednavka::where('miesto',$request->nazov)->get();
+        for ($x=0;$x<$objednavky->count();$x++)
+        {
+            $objednavky[$x]->den=intdiv($x,$request->dennaKapacita);
+            $objednavky[$x]->update();
+        }
+
         return redirect(route('miesta.index'));
     }
 
