@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var seconds = 5;
+    var seconds = 30;
     var foo;
 
     function redirect() {

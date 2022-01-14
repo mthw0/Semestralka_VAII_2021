@@ -7,6 +7,7 @@ use DateInterval;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\Objednavka;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class ObjednavkaController extends Controller
@@ -58,15 +59,17 @@ class ObjednavkaController extends Controller
 
         Objednavka::create($validated);
 
-        $minutes_to_add = 10 * ($poradoveCislo % 50);
+        $den = DB::table('objednavkas')->select('den')->where('rodneCislo', '=', $request->rodneCislo)->get();
+        $miesto = DB::table('objednavkas')->select('miesto')->where('rodneCislo', '=', $request->rodneCislo)->pluck('miesto');
+        $miesto = $miesto[0];
+        $dennaKapcita = OckovacieMiesto::where('nazov', $miesto)->pluck('dennaKapacita');
+        $dennaKapcita = $dennaKapcita[0];
+        $minutes_to_add = 10 * ($poradoveCislo % $dennaKapcita);
         $time = new DateTime('2022-03-01 07:00');
         $time->add(new DateInterval('PT' . $minutes_to_add . 'M'));
-        $time->add(new DateInterval('P' . $request->den . 'D'));
-
-        return view('objednavky.uspech', ['datum' => $time]);
-
+        $time->add(new DateInterval('P' . $den[0]->den . 'D'));
+        return view('objednavky.uspech', ['datum' => $time, 'miesto' => $miesto]);
     }
-
 
     public function show(Objednavka $objednavka)
     {
