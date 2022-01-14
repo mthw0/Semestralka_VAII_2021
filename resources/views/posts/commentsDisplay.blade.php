@@ -26,12 +26,10 @@
                        onclick="hideComment({{ $comment->id }})" class="btn btn-outline-danger">
                         Zrušiť</a>
                 </div>
-
             </form>
             {{--<a href="" class="btn btn-sm btn-outline-primary">✎ Upraviť</a>--}}
             <a href="" class="btn btn-sm btn-outline-danger deleteComment" data-id="{{ $comment->id }}"
-               style="max-width: 100px">🗑
-                Vymazať</a>
+               style="max-width: 100px">🗑 Vymazať</a>
         @endauth
         @include('posts.commentsDisplay', ['comments' => $comment->replies])
     </div>

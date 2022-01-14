@@ -27,10 +27,11 @@
         @endauth
     </h1>
     <hr>
+    <div id="clanky">
     @foreach ($posts  as $post)
         @include('posts.show')
     @endforeach
-
+    </div>
 
 </div>
 

@@ -7,10 +7,8 @@
     <li class="list-group-item"><strong>Kapacita: </strong>{{ $miesto->dennaKapacita }}</li>
     @auth
         <li class="list-group-item">
-                <a href="{{ route('miesta.edit', [$miesto->id])}}" class="vymazat btn btn-sm btn-outline-info">✎
-                    Upraviť</a>
-
-            <a href="" class="btn btn-sm btn-outline-danger deleteMiesto" data-id="{{ $miesto->id }}">🗑 Vymazať</a>
+            <a href="{{ route('miesta.edit', [$miesto->id])}}" class="vymazat btn btn-sm btn-outline-info">✎ Upraviť</a>
+            <a href="" class="btn btn-sm btn-outline-danger deleteMiesto vymazat" data-id="{{ $miesto->id }}">🗑 Vymazať</a>
         </li>
     @endauth
 </ul>

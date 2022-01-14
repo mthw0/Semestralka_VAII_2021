@@ -1,6 +1,6 @@
 $(document).off('click', '.deleteComment').on('click', '.deleteComment', function (e) {
+    e.preventDefault();
     if (confirm("Naozaj chcete vymazat?")) {
-        e.preventDefault();
         let id = $(this).data("id");
         let token = $("meta[name='csrf-token']").attr("content");
 
@@ -13,7 +13,8 @@ $(document).off('click', '.deleteComment').on('click', '.deleteComment', functio
                     id: id
                 },
                 success: function (res) {
-                    window.location.reload();
+                    $('.koment_div').load(window.location.href+ " .koment_div");
+                    alert("Vymazanie prebehlo úspešne!");
                 }
             });
     }

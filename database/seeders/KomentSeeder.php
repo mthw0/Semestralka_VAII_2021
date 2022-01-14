@@ -21,17 +21,18 @@ class KomentSeeder extends Seeder
             'body' => 'Prvý'
         ]);
         DB::table('comments')->insert([
-            'user_id' => '1',
+            'user_id' => '2',
             'post_id' => '1',
             'body' => 'Druhý'
         ]);
         DB::table('comments')->insert([
             'user_id' => '1',
             'post_id' => '1',
-            'body' => 'Tretí'
+            'parent_id' => '1',
+            'body' => 'Odpoveď'
         ]);
         DB::table('comments')->insert([
-            'user_id' => '1',
+            'user_id' => '2',
             'post_id' => '2',
             'body' => 'Prvý'
         ]);
