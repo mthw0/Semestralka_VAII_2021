@@ -10296,7 +10296,7 @@ hr {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.alert-primary {
+.alert-warning {
   z-index: -1;
 }
 
@@ -10304,7 +10304,7 @@ hr {
   margin-top: 100px;
 }
 
-#koment_div {
+.koment_div {
   margin-bottom: 200px;
 }
 

@@ -16,7 +16,7 @@
     @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id])
 
     @guest
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-warning" role="alert">
             Komentáre môžu pridávať len prihlásení používatelia!
         </div>
     @endguest

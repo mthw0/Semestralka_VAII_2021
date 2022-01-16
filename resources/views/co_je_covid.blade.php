@@ -12,7 +12,7 @@
 
 <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert">
     Používaním tejto stránky súhlasíte s používaním súborov cookie.
-    <span onclick="OK()"><b>OK</b>&nbsp;</span>
+    <span class="alert-link" onclick="OK()">OK&nbsp;</span>
 </div>
 <div class="container">
     <div class="one-third side">

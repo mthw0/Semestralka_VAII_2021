@@ -259,6 +259,7 @@ a {
 
 .table-hover tbody tr {
     border-left: white 2px solid;
+
     &:hover {
         border-left: $green 2px solid;
     }
@@ -268,7 +269,7 @@ hr {
     border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
 
-.alert-primary {
+.alert-warning {
     z-index: -1;
 }
 
