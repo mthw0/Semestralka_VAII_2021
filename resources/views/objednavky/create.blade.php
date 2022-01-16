@@ -60,6 +60,7 @@
         <div class="field">
             <div class="control">
                 <button type="submit" class="btn btn-primary">Odoslať</button>
+                <a href="{{route('ockovanie.index')}}" class="btn btn-danger">Späť</a>
             </div>
         </div>
     </form>

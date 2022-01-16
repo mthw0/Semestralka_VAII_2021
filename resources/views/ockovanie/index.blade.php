@@ -12,8 +12,6 @@
     $('#polozkyMenu6').addClass('active');
     $('#polozkyMenu7').removeClass('active');
 </script>
-<script src="js/jquery.js">
-</script>
 
 <div class="container">
     <div id="cookie-message" data-cookie-expiry="60" class="alert alert-primary" role="alert">

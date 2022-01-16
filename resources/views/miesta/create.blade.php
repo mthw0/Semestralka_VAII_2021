@@ -1,6 +1,4 @@
 @include('menu')
-
-<title>Vytvorit nove miesto</title>
 <div class="container">
 
     <h1 class="title">Vytvorenie nového očkovacieho miesta</h1>

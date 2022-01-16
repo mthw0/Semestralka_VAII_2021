@@ -97,9 +97,12 @@ class ObjednavkaController extends Controller
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
             'rodneCislo' => 'required|string|min:11|max:11',
+            /*
             'poradoveCislo' => ['required', 'int', Rule::unique('objednavkas')->where(function ($query) use ($request) {
                 return $query->where('miesto', $request->miesto);
             })]
+            */
+            'poradoveCislo' => 'required|int'
 
         ]);
 
