@@ -1,6 +1,9 @@
 @section('title', 'Edit Post')
 @section('action', route('objednavky.create'))
 @include('menu')
+@php
+    use App\Models\OckovacieMiesto;
+@endphp
 
 <div class="container">
     <h1 class="title">Úprava registrácie na očkovanie</h1>
@@ -34,7 +37,12 @@
         <label for="exampleFormControlSelect2">Miesto</label>
         <select class="form-control" id="exampleFormControlSelect2" name="miesto" >
             @foreach($nazvy as $nazov)
-                @if ($objednavka->miesto == $nazov)
+                @php
+                    $miesto = OckovacieMiesto::where('id', $objednavka->miesto)->pluck('nazov');
+                    $miesto = $miesto[0];
+                @endphp
+
+                @if ($miesto == $nazov)
                     <option selected>{{ $nazov }}</option>
                 @else
                     <option>{{ $nazov }}</option>

@@ -21,8 +21,7 @@ class ObjednavkaController extends Controller
 
     public function fetch(Request $request)
     {
-        if($request->ajax())
-        {
+        if ($request->ajax()) {
             $objednavky = Objednavka::orderBy('miesto')->orderBy('poradoveCislo')->paginate(20);
             return view('objednavky.tabulka', compact('objednavky'))->render();
         }
@@ -41,21 +40,27 @@ class ObjednavkaController extends Controller
     public function store(Request $request)
     {
         $miesto = OckovacieMiesto::where('nazov', $request->miesto)->pluck('id');
-        $poradoveCislo = Objednavka::query()->where('miesto', '=', $miesto)->max('poradoveCislo') + 1;
-        for ($x = 0; $x < Objednavka::query()->where('miesto', '=', $miesto)->max('poradoveCislo'); $x++) {
+        $pocet = Objednavka::query()->where('miesto', '=',$miesto[0])->count('poradoveCislo');
+        if ($pocet == 0)
+        {
+            $poradoveCislo = 0;
+        }
+        else
+        {
+            $poradoveCislo = $pocet;
+        }
+        for ($x = 0; $x < $pocet; $x++) {
             if (!Objednavka::where('miesto', '=', $miesto)->where('poradoveCislo', '=', $x)->exists()) {
                 $poradoveCislo = $x;
                 break;
             }
         }
-
         $dennaKapcita = OckovacieMiesto::where('id', '=', $miesto)->pluck('dennaKapacita');
         $request->merge([
             'poradoveCislo' => $poradoveCislo,
             'den' => intdiv($poradoveCislo, $dennaKapcita[0]),
             'miesto' => $miesto[0]
         ]);
-
         $validated = $request->validate([
             'miesto' => 'required|int',
             'meno' => 'required|string|max:255',
@@ -66,6 +71,7 @@ class ObjednavkaController extends Controller
             'poradoveCislo' => 'required|int'
 
         ]);
+
         Objednavka::create($validated);
 
         $den = DB::table('objednavkas')->select('den')->where('rodneCislo', '=', $request->rodneCislo)->get();
@@ -102,17 +108,18 @@ class ObjednavkaController extends Controller
     public function update(Request $request, $objednavka)
     {
         $objednavka = Objednavka::find($objednavka);
+        $miesto = OckovacieMiesto::where('nazov', $request->miesto)->pluck('id');
+        $miesto = $miesto[0];
+        $request->merge([
+            'miesto' => $miesto
+        ]);
+
         $validated = $request->validate([
-            'miesto' => 'required|string|max:255',
+            'miesto' => 'required|int',
             'meno' => 'required|string|max:255',
             'priezvisko' => 'required|string|max:255',
             'telCislo' => 'required|string|min:10|max:10',
-            'rodneCislo' => 'required|string|min:11|max:11|unique:objednavkas',
-            /*
-            'poradoveCislo' => ['required', 'int', Rule::unique('objednavkas')->where(function ($query) use ($request) {
-                return $query->where('miesto', $request->miesto);
-            })]
-            */
+            'rodneCislo' => 'required|string|min:11|max:11|unique:objednavkas,rodneCislo,'.$request->id,
             'poradoveCislo' => 'required|int'
 
         ]);

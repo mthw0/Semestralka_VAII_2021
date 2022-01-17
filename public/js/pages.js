@@ -13,6 +13,7 @@ $(document).ready(function(){
             success:function(data)
             {
                 $('#tabulka').html(data);
+                window.scrollTo(0, 0);
             }
         });
     }

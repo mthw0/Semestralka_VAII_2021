@@ -2,7 +2,7 @@
 <div class="container">
 
     <h1 class="title">Vytvorenie nového očkovacieho miesta</h1>
-
+    @include('chyby')
     <form method="post" action="{{ route('miesta.store') }}">
         @csrf
         <div>
