@@ -47,8 +47,9 @@ class KontrolaController extends Controller
             $poradoveCislo = $poradoveCislo[0];
             $den=DB::table('objednavkas')->select('den')->where('rodneCislo','=',$cislo)->get();
             $miesto=DB::table('objednavkas')->select('miesto')->where('rodneCislo','=',$cislo)->pluck('miesto');
+            $dennaKapcita = OckovacieMiesto::where('id', $miesto)->pluck('dennaKapacita');
+            $miesto = OckovacieMiesto::where('id', $miesto)->pluck('nazov');
             $miesto=$miesto[0];
-            $dennaKapcita = OckovacieMiesto::where('nazov', $miesto)->pluck('dennaKapacita');
             $dennaKapcita=$dennaKapcita[0];
             $minutes_to_add = 10 * ($poradoveCislo%$dennaKapcita);
             $time = new DateTime('2022-03-01 07:00');
