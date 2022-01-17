@@ -12,6 +12,7 @@
 </script>
 <script src="{{URL::asset('js/prepinac.js')}}"></script>
 <script src="{{URL::asset('js/delete.js')}}"></script>
+<script src="{{URL::asset('js/pages.js')}}"></script>
 
 <div class="container" id="obj">
     <h1>Objednávky
@@ -23,41 +24,8 @@
     </span>
     </h1>
     <hr>
-    <p>
-        <a id="prepinac" class="btn btn-outline-secondary" style="border-radius: 20%">
-            o/-
-        </a>
 
-    </p>
-    <div id="grid" style="display: none">
-        @foreach ($objednavky as $objednavka)
-            <div class="karta">
-                @include('objednavky.show')
-            </div>
-        @endforeach
-    </div>
-
-    <table class="table table-hover table-responsive" id="tabulka" style="display: inline-table">
-        <thead>
-        <tr>
-            <th scope="col">Miesto</th>
-            <th scope="col">Poradové číslo</th>
-            <th scope="col">Datum a čas</th>
-            <th scope="col">Meno</th>
-            <th scope="col">Priezvisko</th>
-            <th scope="col">Tel. cislo</th>
-            <th scope="col">Rodne cislo</th>
-            <th scope="col">Akcie</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach ($objednavky as $objednavka)
-            @include('objednavky.row')
-        @endforeach
-
-        </tbody>
-    </table>
-    {{ $objednavky->links() }}
+    @include('objednavky.tabulka')
 
 </div>
 

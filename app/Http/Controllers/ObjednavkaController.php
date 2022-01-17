@@ -19,6 +19,15 @@ class ObjednavkaController extends Controller
         return view('objednavky.index', ['objednavky' => $objednavky]);
     }
 
+    public function fetch(Request $request)
+    {
+        if($request->ajax())
+        {
+            $objednavky = Objednavka::orderBy('miesto')->orderBy('poradoveCislo')->paginate(20);
+            return view('objednavky.tabulka', compact('objednavky'))->render();
+        }
+    }
+
     public function create()
     {
         $nazvy = [];

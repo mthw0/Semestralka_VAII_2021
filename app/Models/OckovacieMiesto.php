@@ -14,7 +14,6 @@ class OckovacieMiesto extends Model
         'nazov',
         'adresa',
         'popis',
-        'obrazok',
         'dennaKapacita'
     ];
 }
