@@ -21,9 +21,11 @@
 
     <h1>Kto a kedy sa bude môcť dať zaočkovať?</h1>
     <hr>
-    <p><a href={{route('objednavky.create')}} class="btn btn-primary">Požiadať o očkovanie</a>
+    <p>
+        <a href={{route('objednavky.create')}} class="btn btn-primary">Požiadať o očkovanie</a>
     </p>
-    <p><a href={{route('kontrola.index')}} class="btn btn-primary">Kontrola objednavky</a>
+    <p>
+        <a href={{route('kontrola.index')}} class="btn btn-outline-primary">Kontrola objednavky</a>
     </p>
 
     <p>
