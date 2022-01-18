@@ -60,8 +60,9 @@ class MiestaController extends Controller
         $validated['slug'] = Str::slug($validated['nazov']);
 
         $miesto->update($validated);
-
-        $objednavky=Objednavka::where('miesto',$request->nazov)->get();
+        $nazov = OckovacieMiesto::where('nazov', $miesto->nazov)->pluck('id');
+        $nazov = $nazov[0];
+        $objednavky=Objednavka::where('miesto',$nazov)->get();
         for ($x=0;$x<$objednavky->count();$x++)
         {
             $objednavky[$x]->den=intdiv($x,$request->dennaKapacita);

@@ -91,4 +91,4 @@
 
 <img src="{{URL::asset('img/Header-Background.webp')}}" class="img-fluid" alt="Responsive image">
 
-<button onclick="topFunction()" id="myBtn" title="Go to top">⬆</button>
+<button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>

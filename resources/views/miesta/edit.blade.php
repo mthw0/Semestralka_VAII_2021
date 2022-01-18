@@ -13,7 +13,7 @@
             <div class="form-group">
             <label class="label">Názov</label>
             <input type="text" name="nazov" value="{{ $miesto->nazov }}" class="form-control" placeholder="Názov očkovacieho miesta"
-                   required/>
+                   required pattern="[A-Z]{1}*" title="Názov musí začínať veškým písmenom"/>
             </div>
             <div class="form-group">
                 <label class="label">Adresa</label>
@@ -28,7 +28,7 @@
             <div class="form-group">
             <label class="label">Denná kapacita</label>
             <input type="text" name="dennaKapacita" value="{{ $miesto->dennaKapacita }}" class="form-control"
-                   placeholder="Denna kapacita" required/>
+                   placeholder="Denna kapacita" required pattern="[1-9]+" title="Kapacita musí byť číslo väčšie ako 0"/>
             </div>
             <button type="submit" class="btn btn-outline-primary">Odoslať</button>
         </div>

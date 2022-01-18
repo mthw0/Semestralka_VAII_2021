@@ -23,26 +23,26 @@
             <label class="label">Meno</label>
             <input type="text" name="meno" pattern="[A-ZĽŠČĎŤŽÝÁÍÉ]{1}[a-zľščťúžďýáíé]{1,100}" value="{{ old('meno') }}"
                    class="form-control"
-                   placeholder="Krstné meno" required title="Krstné meno musí obsahovať prvé veľké písmeno"/>
+                   placeholder="Krstné meno" required title="Krstné meno musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená."/>
         </div>
         <div class="field form-group">
             <label class="label">Priezvisko</label>
             <input type="text" name="priezvisko" pattern="[A-ZĽŠČŤŽÝÁĎÍÉ]{1}[a-zľščťďúžýáíé]{1,100}"
                    value="{{ old('priezvisko') }}"
                    class="form-control"
-                   placeholder="Priezvisko" required title="Krstné meno musí obsahovať prvé veľké písmeno"/>
+                   placeholder="Priezvisko" required title="Krstné meno musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená."/>
         </div>
         <div class="field form-group">
             <label class="label">Tel. číslo</label>
             <input type="text" name="telCislo" pattern="[0-9]{10}" value="{{ old('telCislo') }}" class="form-control"
                    placeholder="Tel. číslo vo formáte: 0000000000"
-                   required title="Telefónne číslo musí byť vo formáte 10 číslic"/>
+                   required title="Telefónne číslo musí byť vo formáte 10 číslic."/>
         </div>
         <div class="field form-group">
             <label class="label">Rodné číslo</label>
             <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ old('rodneCislo') }}"
                    class="form-control"
-                   placeholder="Rodné číslo vo formáte: 000000/0000" required title="Rodné číslo musí byť vo formáte 6 čísel lomítko a 4 čísla"/>
+                   placeholder="Rodné číslo vo formáte: 000000/0000" required title="Rodné číslo musí byť vo formáte 6 čísel lomítko a 4 čísla."/>
         </div>
         <div class="field form-group" style="display: none">
             <label class="label">Poradové číslo</label>

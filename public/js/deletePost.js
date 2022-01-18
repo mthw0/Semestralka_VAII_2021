@@ -5,7 +5,7 @@ $(document).off('click', '.deletePost').on('click', '.deletePost', function (e) 
         let token = $("meta[name='csrf-token']").attr("content");
         $.ajax(
             {
-                url: "admin/posts/" + id,
+                url: "/admin/posts/" + id,
                 type: 'DELETE',
                 data: {
                     _token: token,

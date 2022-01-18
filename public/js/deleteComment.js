@@ -6,7 +6,7 @@ $(document).off('click', '.deleteComment').on('click', '.deleteComment', functio
 
         $.ajax(
             {
-                url: "comments/" + id,
+                url: "/comments/" + id,
                 type: 'DELETE',
                 data: {
                     _token: token,
