@@ -9,7 +9,7 @@
             <label class="label">Názov</label>
             <input type="text" name="nazov" value="{{ old('nazov') }}" class="form-control"
                    placeholder="Názov očkovacieho miesta"
-                   required pattern="[A-Z]{1}*" title="Názov musí začínať veškým písmenom"/>
+                   required pattern="[A-Z]{1}[a-zA-Z0-9]+" title="Názov musí obsahovať aspoň 2 znaky prvý je veľké písmeno"/>
         </div>
         <div class="form-group">
             <label class="label">Adresa</label>
