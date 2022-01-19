@@ -13,7 +13,7 @@
             <div class="form-group">
             <label class="label">Názov</label>
             <input type="text" name="nazov" value="{{ $miesto->nazov }}" class="form-control" placeholder="Názov očkovacieho miesta"
-                   required pattern="[A-Z]{1}[a-zA-Z0-9]+" title="Názov musí obsahovať aspoň 2 znaky, prvý je veľké písmeno"/>
+                   required/>
             </div>
             <div class="form-group">
                 <label class="label">Adresa</label>

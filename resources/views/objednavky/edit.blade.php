@@ -17,13 +17,13 @@
 
         <label class="label">Meno</label>
         <input type="text" name="meno" pattern="[A-ZĽŠČŤĎŽÝÁÍÉ]{1}[a-zľščťúžýáďíé]{1,100}"
-               value="{{ $objednavka->meno }}" class="form-control" required title="Krstné meno musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená."/>
+               value="{{ $objednavka->meno }}" class="form-control" required title="Krstné meno musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená"/>
         </div>
         <div class="form-group">
 
         <label class="label">Priezvisko</label>
         <input type="text" name="priezvisko" pattern="[A-ZĽŠČŤŽÝĎÁÍÉ]{1}[a-zľščťžďúýáíé]{1,100}"
-               value="{{ $objednavka->priezvisko }}" class=" form-control" required title="Priezvisko musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená."/>
+               value="{{ $objednavka->priezvisko }}" class=" form-control" required title="Priezvisko musí obsahovať prvé veľké písmeno a ostatné znaky malé písmená"/>
         </div>
         <div class="form-group">
 
@@ -36,7 +36,7 @@
         <label class="label">Rodné číslo</label>
         <input type="text" name="rodneCislo" pattern="[0-9]{6}\/[0-9]{4}" value="{{ $objednavka->rodneCislo }}"
                class=" form-control"
-               placeholder="000000/0000" required title="Rodné číslo musí byť vo formáte 6 čísel lomítko a 4 čísla."/>
+               placeholder="000000/0000" required title="Rodné číslo musí byť vo formáte 6 čísel lomítko a 4 čísla"/>
         </div><div class="form-group">
 
         <label class="label">Poradové číslo</label>
